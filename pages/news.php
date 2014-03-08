@@ -1,10 +1,38 @@
 <?php include 'header.php'; ?>
+
+
 <!-- Main Page Content and Sidebar -->
+
 
 <div class="row">
 
     <!-- Main Blog Content -->
+
     <div class="large-9 columns" role="content">
+
+
+        <ul class="highlights" data-orbit>
+          <li>
+            <img src="http://placehold.it/750x300&text=[img]" />
+            <div class="orbit-caption">
+              Caption One.
+            </div>
+          </li>
+          <li>
+            <img src="http://placehold.it/750x300&text=[img]" alt="slide 2" />
+            <div class="orbit-caption">
+              Caption Two.
+            </div>
+          </li>
+          <li>
+            <img src="http://placehold.it/750x300&text=[img]" alt="slide 3" />
+            <div class="orbit-caption">
+              Caption Three.
+            </div>
+          </li>
+        </ul>
+
+
 
         <article>
 
@@ -56,8 +84,10 @@
     <!-- End Main Content -->
 
     <?php ?>
-    
+
 </div>
 
 <!-- End Main Content and Sidebar -->
+
+
 <?php include 'footer.php'; ?>

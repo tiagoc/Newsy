@@ -1,7 +1,7 @@
 <!-- Footer -->
 
 <footer class="row">
-    <div class="row collapse">
+ <!--   <div class="row collapse">
         <div class="small-12 columns">
             <form>
                 <div class="row">
@@ -33,7 +33,7 @@
             </form>
         </div>
     </div>
-
+-->
     <div class="large-12 columns">
         <hr />
         <div class="row">
@@ -51,12 +51,14 @@
         </div>
     </div>
 </footer>
+
 <script src="../js/jquery.min.js"></script>
-<script src="../js/templates/foundation.js"></script>
+<script src="../js/foundation.min.js"></script>
 <script>
     $(document).foundation();
     var doc = document.documentElement;
     doc.setAttribute('data-useragent', navigator.userAgent);
 </script>
+
 </body>
 </html>
