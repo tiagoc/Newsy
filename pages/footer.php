@@ -22,7 +22,7 @@
                         <div class="small-10 columns">
                             <input type="password" name="password" placeholder="password"/>           
                         </div>                        
-                    </div>http://www.youtube.com/watch?v=An5E3CpGd48
+                    </div>
                 </div>
 
                 <div class="row">

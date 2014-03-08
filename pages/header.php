@@ -11,9 +11,11 @@
 
         <meta name="author" content="ZURB, inc. ZURB network also includes zurb.com" />
         <meta name="copyright" content="ZURB, inc. Copyright (c) 2013" />
-
+        
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="../css/foundation.min.css" />
         <link rel="stylesheet" href="../css/globalrules.css" />
+        <link rel="stylesheet" href="../css/custom.css" />
         <script src="../js/modernizr.min.js"></script>
     </head>
     <body>
