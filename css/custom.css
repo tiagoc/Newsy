@@ -1,5 +1,3 @@
-<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-
 body {
     padding: 1em;}
 
@@ -16,8 +14,8 @@ p {
     text-align:justify;}
 
 .highlights li{   
-    %text-align: center;
-    %margin-top: 0px;
+    text-align: center;
+    margin-top: 0px;
     padding-top: 0px;}
 
 .orbit-bullets-container{
@@ -28,4 +26,3 @@ p {
 
 .orbit-timer{
     visibility:hidden;}
-    
