@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include 'header-user.php'; ?>
 
 <div class="row">
     <div class="large-9 columns">

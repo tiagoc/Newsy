@@ -36,22 +36,14 @@
                     <h1>Newsy <small>Fresh news. Your way.</small></h1>
                 </span>
 
-                <span class="right">                    
-                    <a href="#" data-reveal-id="loginModal" data-reveal class="button radious round">Login</a><br>
+                <span class="right">
+                    <a href="#" data-dropdown="user-menu" class="button round dropdown"><i class="fi-torso"></i> John Smith</a><br>
+                    <ul id="user-menu" data-dropdown-content class="f-dropdown">
+                        <li><a href="#"><i class="fi-list"></i> News</a></li>
+                        <li><a href="#"><i class="fi-torso"></i> My Profile</a></li>
+                        <li><a href="#"><i class="fi-lock"></i> Logout</a></li>     
+                    </ul>
                 </span>    
-
-                <div id="loginModal" class="reveal-modal small" data-reveal>
-                    <form>
-                        <div class="row">
-                            <div class="small-8 small-centered columns">
-                                <h1>Login</h1>
-                                <input type="text" name="username" placeholder="username"/>                                
-                                <input type="password" name="password" placeholder="password"/>  
-                                <input type="submit" class="right button tiny round"/>                                         
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
 
