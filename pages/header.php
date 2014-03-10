@@ -36,12 +36,22 @@
 
                 <span class="right">         
                     <ul class="button-group right">
-                        <a href="#" data-dropdown="login" class="button radious round dropdown">Login</a><br>
-                        <ul id="login" data-dropdown-content class="f-dropdown">
-                            <input type="text" name="username" placeholder="username"/>
-                            <input type="password" name="password" placeholder="password"/>
-                        </ul>
-                </span>                                            
+                        <a href="#" data-reveal-id="loginModal" data-reveal class="button radious round">Login</a><br>
+                    </ul>
+                </span>    
+
+                <div id="loginModal" class="reveal-modal small" data-reveal>
+                    <form>
+                        <div class="row">
+                            <div class="small-8 small-centered columns">
+                                <h1>Login</h1>
+                                <input type="text" name="username" placeholder="username"/>                                
+                                <input type="password" name="password" placeholder="password"/>  
+                                <input type="submit" class="right button tiny round"/>                                         
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
