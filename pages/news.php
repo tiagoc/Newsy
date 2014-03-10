@@ -83,7 +83,7 @@
     </div>
     <!-- End Main Content -->
 
-    <?php ?>
+    <?php include './sidebar.php'?>
 
 </div>
 
