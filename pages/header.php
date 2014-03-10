@@ -22,6 +22,7 @@
         <script src="../js/foundation.min.js"></script>
         <script src="../js/foundation/foundation.orbit.js"></script>
         <script src="../js/foundation/foundation.dropdown.js"></script>
+        <script src="../js/Chart.min.js"></script>
     </head>
 
 
@@ -58,7 +59,6 @@
 
         <div class="row">
             <hr/>
-        </div>
-    </div>
+        </div>   
 
-    <!-- End Nav -->
+        <!-- End Nav -->

@@ -1,11 +1,13 @@
 <!-- Footer -->
+<div class="row">
+    <hr/>
+</div>
 
 <footer class="row">
-    <div class="large-12 columns">
-        <hr />
+    <div class="small-12 large-12 columns">                
         <div class="row">
             <div class="large-6 columns">
-                
+
             </div>
             <div class="large-6 columns">
                 <p class="text-right">&copy; 2014 Newsy</p>
