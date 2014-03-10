@@ -29,23 +29,25 @@
         <!-- Nav Bar -->
 
         <div class="row">
-            <div class="large-12 columns">        
-                <div class="nav-bar">              
-                    <ul class="button-group right">
+            <div class="small-12 columns">
+                <span class="left">
+                    <h1>Newsy <small>Fresh news. Your way.</small></h1>
+                </span>
 
+                <span class="right">         
+                    <ul class="button-group right">
                         <a href="#" data-dropdown="login" class="button radious round dropdown">Login</a><br>
                         <ul id="login" data-dropdown-content class="f-dropdown">
-                            <li><a href="#"><input type="text" name="username" placeholder="username"/></a></li>
-                            <li><input type="text" name="username" placeholder="username"/></li>
-                            <li><a href="#">Yet another</a></li>
+                            <input type="text" name="username" placeholder="username"/>
+                            <input type="password" name="password" placeholder="password"/>
                         </ul>
-
-                    </ul>
-                </div>
-
-                <h1>Newsy <small>Fresh news. Your way.</small></h1>
-                <hr />
+                </span>                                            
             </div>
         </div>
 
-        <!-- End Nav -->
+        <div class="row">
+            <hr/>
+        </div>
+    </div>
+
+    <!-- End Nav -->
