@@ -4,12 +4,33 @@
     <div class="large-9 columns">
         <div class="row">
 
-            <h2><b><i class="fi-torso"></i> John Smith</b></h2>
-            <p><big><b><i class="fi-mail"></i> Email</b></big> nofway@random.com</p>
-            <p><big><b><i class="fi-male-female"></i> Gender</b></big> Male</p>
-            <p><big><b><i class="fi-calendar"></i> Birthday</b></big> 31/12/1994</p>
-            <p><big><b><i class="fi-home"></i> Address</b></big> Random Street, nr 3, Silicon Valley</p>
-            <p><big><b><i class="fi-clock"></i> Registered since</b></big> 10/03/2014</p>
+            <div class="row">
+                <div class="small-12 columns">
+                    <h2 class="left"><b><i class="fi-torso"></i> John Smith</b></h2>                
+                    <h2 class="right"><a href="#"><i class="fi-pencil"></i></a></h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-4 columns"><big><b><i class="fi-mail"></i> Email</b></big></div> <div class="small-8 columns">nofway@random.com</div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="small-4 columns"><big><b><i class="fi-male-female"></i> Gender</b></big></div> <div class="small-8 columns">Male</div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="small-4 columns"><big><b><i class="fi-calendar"></i> Birthday</b></big></div> <div class="small-8 columns">31/12/1994</div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="small-4 columns"><big><b><i class="fi-home"></i> Address</b></big></div> <div class="small-8 columns">Random Street, nr 3, Silicon Valley</div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="small-4 columns"><big><b><i class="fi-clock"></i> Registered since</b></big></div> <div class="small-8 columns">10/03/2014</div>
+            </div>
+            <br/><br/>
         </div>
     </div>
 
