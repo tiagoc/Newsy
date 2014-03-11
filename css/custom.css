@@ -5,7 +5,8 @@ h1 {
     position: relative;
     margin-top: 10px;
     font-family: 'Lobster', helvetica, arial;
-    font-size: 50px;}
+    font-size: 50px;
+}
 
 .button-group{
     padding-top: 20px;}
@@ -23,3 +24,36 @@ p {
 
 .orbit-timer{
     visibility:hidden;}
+
+.right.button.tiny.round
+{
+    font-size: 1em;
+}
+
+.reveal-modal.small {
+    margin-top: 1.5em;
+}
+
+#loginModal h1 {
+    padding-bottom: 0.5em;
+}
+
+.right a{
+    margin-top: 1em;
+}
+
+.separator{
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.large-6.columns img{
+    padding-top: 0.4em;
+}
+
+#category
+{
+    padding-bottom: 3px;
+    font-weight: bold;
+    color: #008cba;
+}
