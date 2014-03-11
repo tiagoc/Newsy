@@ -78,8 +78,8 @@
 
             <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
 
-            <div id="category">Categories</div> <p>Politics, Food </p>
-            <p class="text-right">0 comments</p> 
+            <div id="category"><i class="fi-price-tag"></i> Categories</div> <p>Politics, Food </p>
+            <p class="text-right"><i class="fi-comment"></i> 0 comments</p> 
         </article>
 
     </div>
