@@ -1,5 +1,6 @@
 body {
-    padding: 1em;}
+    padding: 1em;
+}
 
 h1 {
     position: relative;
@@ -9,24 +10,28 @@ h1 {
 }
 
 .button-group{
-    padding-top: 20px;}
+    padding-top: 20px;
+}
 
 p {
-    text-align:justify;}
+    text-align:justify;
+}
 
 .highlights li{   
     text-align: center;
     margin-top: 0px;
-    padding-top: 0px;}
+    padding-top: 0px;
+}
 
 .orbit-slide-number{
-    visibility:hidden;}
+    visibility:hidden;
+}
 
 .orbit-timer{
-    visibility:hidden;}
+    visibility:hidden;
+}
 
-.right.button.tiny.round
-{
+.right.button.tiny.round{
     font-size: 1em;
 }
 
@@ -34,7 +39,7 @@ p {
     margin-top: 1.5em;
 }
 
-#loginModal h1 {
+#loginModal h1{
     padding-bottom: 0.5em;
 }
 
@@ -51,8 +56,7 @@ p {
     padding-top: 0.4em;
 }
 
-#category
-{
+#category{
     padding-bottom: 3px;
     font-weight: bold;
     color: #008cba;
