@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="large-10 columns">
                     <label for="body"><b>Body</b></label>
-                    <textarea name="title"></textarea>
+                    <textarea name="body"></textarea>
                 </div>
             </div>
             <div class="row">
@@ -23,7 +23,7 @@
                     <input type="text" name="categories"/>
                 </div>
             </div>
-            <input type="submit" class="right button tiny round"/>
+            <input type="submit"  value= "Submit" class="right button tiny round"/>
         </form>    
     </div>
 </div>

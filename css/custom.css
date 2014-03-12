@@ -74,3 +74,7 @@ p {
     font-weight: bold;
     color: #008cba;
 }
+
+textarea {
+    min-height: 150px;
+}
