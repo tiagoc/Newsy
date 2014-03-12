@@ -23,6 +23,7 @@
                     <input type="text" name="categories"/>
                 </div>
             </div>
+            <input type="submit"  value= "Save" class="right button tiny round"/>
             <input type="submit"  value= "Submit" class="right button tiny round"/>
         </form>    
     </div>

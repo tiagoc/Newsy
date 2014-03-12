@@ -27,17 +27,17 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Real stuff happened</td>
+                      <td><a>Real stuff happened</a></td>
                       <td>Jonh Doe</td>
                       <td><a href="#" class="tiny button radious">Publish</a></td>
                     </tr>
                     <tr>
-                      <td>New news</td>
+                      <td><a>New news</a></td>
                       <td>Emma Derpson</td>
                       <td><a href="#" class="tiny button radious">Publish</a></td>
                     </tr>
                       <tr>
-                      <td>Who let the dogs out?</td>
+                      <td><a>Who let the dogs out?</a></td>
                       <td>Judite Almeida</td>
                       <td><a href="#" class="tiny button radious">Publish</a></td>
                     </tr>
@@ -66,17 +66,17 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>The countdown</td>
+                      <td><a>The countdown</a></td>
                       <td>Steve Nojob</td>
                       <td><a href="#" class="tiny button alert radious">Unpublish</a></td>
                     </tr>
                     <tr>
-                      <td>Important things</td>
+                      <td><a>Important things</a></td>
                       <td>Catherine York</td>
                       <td><a href="#" class="tiny button alert radious">Unpublish</a></td>
                     </tr>
                       <tr>
-                      <td>Great questions</td>
+                      <td><a>Great questions</a></td>
                       <td>Francesco Silva</td>
                       <td><a href="#" class="tiny button alert radious">Unpublish</a></td>
                     </tr>
