@@ -83,7 +83,7 @@
                 </div>
                 <div class="row">
                     <div class="large-8 columns">
-                        <input type="submit" class="right button tiny round"/>
+                        <input type="submit" value="Submit" class="right button tiny round"/>
                     </div>
                 </div>
             </div>
