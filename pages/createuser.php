@@ -53,7 +53,32 @@
                 </div>
                 <div class="row">
                     <div class="large-8 columns">
-                        <label for="birthday"><b></b></label>
+                        <label for="twitter"><b>Twitter account</b></label>
+                        <input type="url" name="twitter"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-8 columns">
+                        <label for="youtube"><b>Youtube account</b></label>
+                        <input type="url" name="youtube"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-8 columns">
+                        <label for="facebook"><b>Facebook account</b></label>
+                        <input type="url" name="facebook"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-8 columns">
+                        <label for="googleplus"><b>Google+ account</b></label>
+                        <input type="url" name="googleplus"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-8 columns">
+                        <label for="linkedin"><b>LinkedIn account</b></label>
+                        <input type="url" name="linkedin"/>
                     </div>
                 </div>
                 <div class="row">
