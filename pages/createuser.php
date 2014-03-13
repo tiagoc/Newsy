@@ -8,6 +8,12 @@
             <div class="small-12 columns">
                 <div class="row">
                     <div class="large-4 columns">
+                    	<label for="username"><b>Username</b></label>
+                        <input type="text" name="username"/>
+                	</div>
+                </div>
+                <div class="row">
+                    <div class="large-4 columns">
                         <label for="fname"><b>First name</b></label>
                         <input type="text" name="fname"/>
                     </div>
@@ -32,7 +38,7 @@
                 </div>
                 <div class="row">
                     <div class="large-8 columns">
-                        <label for="birthday"><b>Gender</b></label>                        
+                        <label for="birthday" ><b>Gender</b></label>                        
                         <select name="gender">
                             <option value="male" selected> Male </option>
                             <option value="female" selected> Female </option>
@@ -45,14 +51,14 @@
                         <input type="date" name="date"/>
                     </div>                    
                     <div class="large-4 columns">
-                        <label for=""><b>Phone</b></label>
+                        <label for="phone"><b>Phone</b></label>
                         <input type="text" name=""/>
                     </div>      
                     <!-- needed for alignment -->
                     <div class="large-4 columns"></div>
                 </div>
                 <div class="row">
-                    <div class="large-8 columns">
+                    <div id="reg-form" class="large-8 columns">
                         <label for="twitter"><b>Twitter account</b></label>
                         <input type="url" name="twitter"/>
                     </div>
@@ -76,7 +82,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="large-8 columns">
+                    <div id="reg-form" class="large-8 columns">
                         <label for="linkedin"><b>LinkedIn account</b></label>
                         <input type="url" name="linkedin"/>
                     </div>

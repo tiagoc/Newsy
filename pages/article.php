@@ -7,7 +7,7 @@
     <div class="large-9 columns" role="content">
     
         <article>
-            <h3><a href="#">Blog Post Title</a></h3>
+            <h3><a href="#">News Title</a></h3>
             <h4><small>Written by <a href="#">John Smith</a> on August 12, 2012.</small></h4>
 
             <div class="row">
@@ -32,12 +32,12 @@
         <div id="comments">
         
             <div class="panel radius">
-                <h5><small>José Miranda - 11/03/2014 22:15</small></h5>
+                <h5><small><div class="comment-username">José Miranda</div><div class="comment-datetime">11/03/2014   22:15</div></small></h5>
                 <p>This is some great news!</p>
             </div>
             
             <div class="panel radius">
-                <h5><small>Roger Dickinson - 11/03/2014 22:30</small></h5>
+                <h5><small><div class="comment-username">Roger Dickinson</div><div class="comment-datetime">11/03/2014   22:30</div></small></h5>
                 <p>I fondly agree with Miranda!</p>
             </div>
             

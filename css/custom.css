@@ -68,15 +68,51 @@ p {
 .large-6.columns img{
     padding-top: 0.4em;
 }
+textarea{
+    min-height: 150px;
+}
 
+/* Main Page - News */
 #category{
     padding-bottom: 3px;
     color: #008cba;
     font-weight: bold;
 }
 
-textarea{
-    min-height: 150px;
+/* Article */
+.comment-username, .comment-datetime{
+    display: inline;
+}
+
+.comment-username{
+    margin-right: 1rem;
+}
+
+/* Create News */
+label[for="title"], label[for="body"], label[for="categories"]{
+    cursor: default;
+}
+
+textarea[name="body"]{
+    height: 15rem;
+}
+
+label[for="categories"]{
+    padding-top: 1.3em;
+}
+
+input[type="submit"]{
+    margin: 0.5em;
+}
+
+/* Header User */
+
+a[data-dropdown="user-menu"]{
+    width: 12rem;
+}
+
+#torso-header-user{
+    padding-right: 0.5rem;
 }
 
 /* User Profile */
@@ -174,3 +210,12 @@ textarea{
 #user-menu li i{
     margin-right: 4%;
 }
+
+/* Register User */
+label[for="username"], label[for="fname"], label[for="lname"],
+label[for="email"], label[for="password"], label[for="birthday"],
+label[for="phone"], label[for="twitter"], label[for="youtube"],
+label[for="facebook"], label[for="googleplus"], label[for="linkedin"]{
+    cursor: default;
+}
+
