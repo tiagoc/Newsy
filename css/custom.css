@@ -105,6 +105,15 @@ input[type="submit"]{
     margin: 0.5em;
 }
 
+/* Header User */
+
+a[data-dropdown="user-menu"]{
+    width: 12rem;
+}
+
+#torso-header-user{
+    padding-right: 0.5rem;
+}
 
 /* User Profile */
 .fi-torso{
@@ -203,7 +212,10 @@ input[type="submit"]{
 }
 
 /* Register User */
-#reg-form label{
+label[for="username"], label[for="fname"], label[for="lname"],
+label[for="email"], label[for="password"], label[for="birthday"],
+label[for="phone"], label[for="twitter"], label[for="youtube"],
+label[for="facebook"], label[for="googleplus"], label[for="linkedin"]{
     cursor: default;
 }
 
