@@ -5,8 +5,8 @@ body {
 h1 {
     position: relative;
     margin-top: 10px;
-    font-family: 'Lobster', helvetica, arial;
     font-size: 50px;
+    font-family: 'Lobster', helvetica, arial;
 }
 
 article h3 {
@@ -30,10 +30,10 @@ p {
     text-align:justify;
 }
 
-.highlights li{   
-    text-align: center;
+.highlights li{
     margin-top: 0px;
-    padding-top: 0px;
+    padding-top: 0px;   
+    text-align: center;
 }
 
 .orbit-slide-number{
@@ -61,8 +61,8 @@ p {
 }
 
 .separator{
-    padding-top: 0;
     margin-top: 0;
+    padding-top: 0;
 }
 
 .large-6.columns img{
@@ -71,10 +71,106 @@ p {
 
 #category{
     padding-bottom: 3px;
+    color: #008cba;
     font-weight: bold;
+}
+
+textarea{
+    min-height: 150px;
+}
+
+/* User Profile */
+.fi-torso{
     color: #008cba;
 }
 
-textarea {
-    min-height: 150px;
+#username{
+    display: inline;
+    padding-left: 0.5em;
+    font-weight: bold;
+}
+
+#email{
+    display: inline;
+    padding-left: 0.5em;
+    font-weight: bold;
+}
+
+#gender{
+    display: inline;
+    padding-left: 0.4em;
+    font-weight: bold;
+}
+
+#birthday{
+    display: inline;
+    padding-left: 0.7em;
+    font-weight: bold;
+}
+
+#address{
+    display: inline;
+    padding-left: 0.7em;
+    font-weight: bold;
+}
+
+#regdate{
+    display: inline;
+    padding-left: 0.6em;
+    font-weight: bold;
+}
+
+.fi-star{
+    margin-right: 0.2em;
+    color: #b6b616;
+}
+
+.fi-comment{
+    color: #c98406;
+}
+
+#favouritesli, #commentsli{
+    margin-left: 0em;
+    list-style-type: none;
+}
+
+#favouritesli li, #commentsli li{
+    margin-left: 0em;
+}
+
+.comment{
+    display: inline;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+#userimage{
+    margin: 1em;
+}
+
+.fi-social-youtube.small-3.small-centered.columns, .fi-social-facebook.small-3.small-centered.columns,
+.fi-social-google-plus.small-3.small-centered.columns, .fi-social-linkedin.small-3.small-centered.columns{
+    font-size: 1.5em;
+    padding: 0.3em;
+}
+
+.fi-social-youtube.small-3.small-centered.columns{
+    padding-left: 1.8em !important;
+}
+
+/* Header User Profile */
+#user-menu{
+    margin-top: 1%;
+}
+
+#user-menu li a{
+    margin-top: 4%;
+    margin-bottom: 4%; 
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 0;
+}
+
+#user-menu li i{
+    margin-right: 4%;
 }

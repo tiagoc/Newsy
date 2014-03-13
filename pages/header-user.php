@@ -37,11 +37,11 @@
                 </span>
 
                 <span class="right">
-                    <a href="#" data-dropdown="user-menu" class="button round dropdown"><i class="fi-torso"></i> John Smith</a><br>
+                    <a href="#" data-dropdown="user-menu" class="button round dropdown"><i class="fi-torso"></i>John Smith</a><br>
                     <ul id="user-menu" data-dropdown-content class="f-dropdown">
-                        <li><a href="#"><i class="fi-list"></i> News</a></li>
-                        <li><a href="#"><i class="fi-torso"></i> My Profile</a></li>
-                        <li><a href="#"><i class="fi-lock"></i> Logout</a></li>     
+                        <li><a href="#"><i class="fi-list"></i>News</a></li>
+                        <li><a href="#"><i class="fi-torso"></i>My Profile</a></li>
+                        <li><a href="#"><i class="fi-lock"></i>Logout</a></li>     
                     </ul>
                 </span>    
             </div>
