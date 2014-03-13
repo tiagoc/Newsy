@@ -11,11 +11,12 @@
         <meta name="author" content="ZURB, inc. ZURB network also includes zurb.com" />
         <meta name="copyright" content="ZURB, inc. Copyright (c) 2013" />
 
-        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+       <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="../css/foundation-icons.css" />
         <link rel="stylesheet" href="../css/foundation.min.css" />
         <link rel="stylesheet" href="../css/globalrules.css" />
         <link rel="stylesheet" href="../css/custom.css" />
+        <link rel="stylesheet" href="../css/responsive-tables.css" />
 
         <script src="../js/vendor/modernizr.js"></script>
         <script src="../js/jquery.min.js"></script>
@@ -23,6 +24,7 @@
         <script src="../js/foundation/foundation.orbit.js"></script>
         <script src="../js/foundation/foundation.dropdown.js"></script>
         <script src="../js/Chart.min.js"></script>
+        <script src="../js/responsive-tables.js"></script>
     </head>
 
 
