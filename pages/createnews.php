@@ -23,8 +23,12 @@
                     <input type="text" name="categories"/>
                 </div>
             </div>
-            <input type="submit"  value= "Save" class="right button tiny round"/>
-            <input type="submit"  value= "Submit" class="right button tiny round"/>
+            <div class="row">
+                <div class="large-10 columns">
+                    <input type="submit"  value= "Save" class="right button tiny round"/>
+                    <input type="submit"  value= "Submit" class="right button tiny round"/>
+                </div>
+            </div>
         </form>    
     </div>
 </div>

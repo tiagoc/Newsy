@@ -25,6 +25,11 @@
         <script src="../js/foundation/foundation.dropdown.js"></script>
         <script src="../js/Chart.min.js"></script>
         <script src="../js/responsive-tables.js"></script>
+        <script src="../js/tinymce/tinymce.min.js"></script>
+
+        <script>
+            tinymce.init({selector: 'textarea'});
+        </script>
     </head>
 
 
