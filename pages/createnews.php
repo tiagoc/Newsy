@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="small-12 columns">
-        <h1>Write News</h1>
+        <h1>Create New Article</h1>
 
         <form>
             <div class="row">        
