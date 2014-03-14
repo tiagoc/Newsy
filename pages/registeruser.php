@@ -1,8 +1,8 @@
-<?php include 'header-user.php'; ?>
+<?php include 'header.php'; ?>
 
 <div class="row">
     <div class="small-12 columns">
-        <h1>Create New User</h1>
+        <h1>Register</h1>
 
         <div class="row">
             <div class="small-12 columns">
