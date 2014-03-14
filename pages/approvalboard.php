@@ -32,7 +32,7 @@
                                 <tr>
                                     <td><a>The countdown</a></td>
                                     <td>Steve Nojob</td>
-                                    <td><a href="#" class="tiny button radious publish-button ">Publish</a></td>
+                                    <td><a href="#" class="tiny button radious publish-button">Publish</a></td>
                                 </tr>
                                 <tr>
                                     <td><a>Important things</a></td>

@@ -2,18 +2,19 @@
 
 <div class="row">
     <div class="small-12 columns">
-        <h1>My news</h1>
+        <h1>My News</h1>
 
         <div class="newstab">
         <dl class="tabs" data-tab>
-          <dd class="active"><a href="#panel2-1">Drafts</a></dd>
-          <dd><a href="#panel2-2">Pending Approval</a></dd>
-            <dd><a href="#panel2-3">Approved</a></dd>
-          <dd><a href="#panel2-4">Rejected</a></dd>
-            <dd><a href="#panel2-5">All news</a></dd>
+          <dd><a href="#panel2-1">Pending Approval</a></dd>
+          <dd><a href="#panel2-2">Approved</a></dd>
+          <dd><a href="#panel2-3">Reproved</a></dd>
+          <dd><a href="#panel2-4">Drafts</a></dd>
+          <dd class="active"><a href="#panel2-5">All News</a></dd>
         </dl>
+        
         <div class="tabs-content">
-          <div class="content active" id="panel2-1">
+          <div class="content" id="panel2-4">
 
             <!--  Drafts tab -->
 
@@ -22,26 +23,26 @@
                 <table>
                   <thead>
                     <tr>
-                      <th width="150">Title</th>
-                      <th width="150">Created on</th>
-                      <th width="150">Submit</th>
+                      <th width="500">Title</th>
+                      <th width="270">Created on</th>
+                      <th width="50"></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td><a>Lorem ipsum</a></td>
+                      <td><a>Lawyer saves woman's life on his way to work</a></td>
                       <td>22/02/2014</td>
-                      <td><a href="#" class="tiny button radious">Publish</a></td>
+                      <td><a href="#" class="tiny button radious submit-button">Submit</a></td>
                     </tr>
                     <tr>
-                      <td><a>Consectetuer adipiscing elit</a></td>
+                      <td><a>Life on a circus</a></td>
                       <td>20/02/2014</td>
-                      <td><a href="#" class="tiny button radious">Publish</a></td>
+                      <td><a href="#" class="tiny button radious submit-button">Submit</a></td>
                     </tr>
                       <tr>
-                      <td><a>Nonummy nibh euismod</a></td>
+                      <td><a>The weather is improving</a></td>
                       <td>12/03/2014</td>
-                      <td><a href="#" class="tiny button radious">Publish</a></td>
+                      <td><a href="#" class="tiny button radious submit-button">Submit</a></td>
                     </tr>
                   </tbody>
                 </table>
@@ -51,31 +52,31 @@
               <!--  Drafts tab end -->
 
           </div>
-            <div class="content" id="panel2-2">
+          <div class="content" id="panel2-1">
 
 
               <!--  Pending approval news tab -->
 
-                <div class = "pendingnews">
+                <div class = "pending">
 
                 <table>
                   <thead>
                     <tr>
-                      <th width="150">Title</th>
-                      <th width="150">Created on</th>
-                      <th width="150">Publish</th>
+                      <th width="500">Title</th>
+                      <th width="270">Created on</th>
+                      <th width="50"></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td><a>Tincidunt ut laoreet</a></td>
+                      <td><a>Man survives crash on a wall</a></td>
                       <td>21/02/2014</td>
-                      <td><a href="#" class="tiny button alert radious">Remove</a></td>
+                      <td><a href="#" class="tiny button alert radious delete-button">Delete</a></td>
                     </tr>
                     <tr>
-                      <td><a>Dolore magna</a></td>
+                      <td><a>For a minute there I lost my car keys</a></td>
                       <td>20/02/2014</td>
-                      <td><a href="#" class="tiny button alert radious">Remove</a></td>
+                      <td><a href="#" class="tiny button alert radious delete-button">Delete</a></td>
                     </tr>
                   </tbody>
                 </table>
@@ -86,26 +87,26 @@
 
 
             </div>
-          <div class="content" id="panel2-3">
+          <div class="content" id="panel2-2">
 
 
               <!--  Approved news tab -->
 
-                <div class = "approvednews">
+                <div class = "approved">
 
                 <table>
                   <thead>
                     <tr>
-                      <th width="150">Title</th>
-                      <th width="150">Created on</th>
-                      <th width="150">Publish</th>
+                      <th width="500">Title</th>
+                      <th width="270">Created on</th>
+                      <th width="50"></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td><a>Aliquam erat volutpat</a></td>
+                      <td><a>Giant hurricane keeps damaging homes</a></td>
                       <td>19/02/2014</td>
-                      <td><a href="#" class="tiny button success radious">Published</a></td>
+                      <td><a href="#" class="tiny button success disabled radious">Published</a></td>
                     </tr>
                   </tbody>
                 </table>
@@ -116,28 +117,28 @@
 
 
           </div>
-          <div class="content" id="panel2-4">
+          <div class="content" id="panel2-3">
 
 
               <!--  Reproved news tab -->
 
-                <div class = "reprovednews">
+                <div class = "reproved">
 
                 <table>
                   <thead>
                     <tr>
-                      <th width="150">Title</th>
-                      <th width="150">Created on</th>
-                      <th width="150">Observations</th>
-                      <th width="150">Publish</th>
+                      <th width="350">Title</th>
+                      <th width="250">Observations</th>
+                      <th width="30">Created on</th>
+                      <th width="50"></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td><a>Ut wisi enim</a></td>
-                      <td>17/02/2014</td>
+                      <td><a>A lovely day in London</a></td>
                       <td>Needs some work on the second paragraph</td>
-                      <td><a href="#" class="tiny button radious">Publish</a></td>
+                      <td>17/02/2014</td>
+                      <td><a href="#" class="tiny button radious submit-button">Submit</a></td>
                     </tr>
                   </tbody>
                 </table>
@@ -151,72 +152,59 @@
             <!--  All news tab -->
 
                 <div class = "allnews">
-
-                <table>
+                  <table>
                   <thead>
                     <tr>
-                      <td><a>Nonummy nibh euismod</a></td>
+                      <th width="500">Title</th>
+                      <th width="270">Created on</th>
+                      <th width="50">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><a>For the cinema fans, a new epic movie</a></td>
                       <td>12/03/2014</td>
                       <td><a href="#" class="tiny button disabled radious">Draft</a></td>
                     </tr>
                     <tr>
-                      <td><a>Lorem ipsum</a></td>
+                      <td><a>There is a large storm on our way</a></td>
                       <td>22/02/2014</td>
                       <td><a href="#" class="tiny button disabled radious">Draft</a></td>
                     </tr>
                     <tr>
-                      <td><a>Tincidunt ut laoreet</a></td>
+                      <td><a>We don't need to be there</a></td>
                       <td>21/02/2014</td>
-                      <td><a href="#" class="tiny button disabled radious">Pending</a></td>
+                      <td><a href="#" class="tiny button disabled radious pending-button">Pending</a></td>
                     </tr>
                     <tr>
-                      <td><a>Consectetuer adipiscing elit</a></td>
+                      <td><a>A single drop of water can run this machine</a></td>
                       <td>20/02/2014</td>
                       <td><a href="#" class="tiny button disabled radious">Draft</a></td>
                     </tr>
                     <tr>
-                      <td><a>Dolore magna</a></td>
+                      <td><a>Thousands of people with a rare disease now have hope for a cure</a></td>
                       <td>20/02/2014</td>
-                      <td><a href="#" class="tiny button disabled radious">Pending</a></td>
+                      <td><a href="#" class="tiny button disabled radious pending-button">Pending</a></td>
                     </tr>
                     <tr>
-                      <td><a>Aliquam erat volutpat</a></td>
+                      <td><a>Millions of dollars spent last year on war</a></td>
                       <td>19/02/2014</td>
-                      <td><a href="#" class="tiny button success disabled radious">Published</a></td>
+                      <td><a href="#" class="tiny button success disabled radious">Approved</a></td>
                     </tr>
                     <tr>
-                      <td><a>Ut wisi enim</a></td>
+                      <td><a>Man runs from burglar and falls into a hole on the ground</a></td>
                       <td>17/02/2014</td>
                       <td><a href="#" class="tiny button alert disabled radious">Reproved</a></td>
-                    </tr>
-                      
+                    </tr>   
                   </tbody>
                 </table>
+              </div>
 
-                </div>
-
-              <!--  All news tab end -->
-
-          
-              
-              
+              <!--  All news tab end -->  
           </div>
-        </div>
-
-
-
-
-
-
-
-            </div>
-
-
-
-
-
-
+      </div>
     </div>
+  </div>
 </div>
 
 <?php include './footer.php'; ?>

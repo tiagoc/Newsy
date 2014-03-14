@@ -305,7 +305,52 @@ label[for="facebook"], label[for="googleplus"], label[for="linkedin"]{
     margin-bottom: 0;
 }
 
+/* My News */
+.drafts table, .pending table, .approved table, .reproved table, .allnews table{
+    width: 100%;
+}
 
+.drafts td, .pending td, .approved td, .reproved td, .allnews td{
+    margin: 0;
+    padding: 0;
+    padding-left: 1em !important;
+}
+
+.approved .tiny.button.success.disabled.radious{
+    margin: 1em;
+    padding-left: 2.18em !important; 
+    padding-right: 2.18em !important; 
+}
+
+.reproved .tiny.button.radious.submit-button{
+    margin: 1em;
+    margin-left: 2em;
+    padding-left: 2.5em !important; 
+    padding-right: 2.5em !important; 
+}
+
+.submit-button{
+    margin: 1em;
+    padding-left: 2.8em !important; 
+    padding-right: 2.8em !important;
+    border-radius: 1000px; 
+    background-color: #43ac6a;
+}
+
+.submit-button:hover{
+    background-color: #73c893;
+}
+
+.allnews .tiny.button.disabled.radious.pending-button{
+    background-color: #fac054;
+}
+
+.allnews .tiny.button.success.disabled.radious, .allnews .tiny.button.alert.disabled.radious,
+.allnews .tiny.button.disabled.radious, .allnews .tiny.button.disabled.radious.pending-button{
+    margin: 1em;
+    padding-left: 2.18em !important; 
+    padding-right: 2.18em !important;
+}
 
 
 
