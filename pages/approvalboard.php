@@ -20,7 +20,12 @@
                                 <tr>
                                     <th width="500">Title</th>
                                     <th width="270">Creator</th>
-                                    <th width="50" class="app-rep-button" onclick="$('.reprove-button, .publish-button').toggleClass('publish-button').toggleClass('reprove-button');">Change Approval</th>
+                                    <th width="50" class="app-rep-button" 
+                                    onclick="if($('.reprove-button').size()==0)
+                                    {$('.reprove-button, .publish-button').html('Reprove');}
+                                    else
+                                    {$('.reprove-button, .publish-button').html('Publish');}
+                                    $('.reprove-button, .publish-button').toggleClass('publish-button').toggleClass('reprove-button');">Change Approval</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -255,6 +255,13 @@ label[for="facebook"], label[for="googleplus"], label[for="linkedin"]{
     background-color: #43ac6a;
 }
 
+.reprove-button{
+    margin: 1em; 
+    padding-left: 2.555em !important; 
+    padding-right: 2.555em !important; 
+    background-color: #f04124;
+}
+
 .unpublish-button{
     margin: 1em;
     padding-left: 2.09em !important; 
@@ -269,12 +276,36 @@ label[for="facebook"], label[for="googleplus"], label[for="linkedin"]{
     background-color: #f04124;
 }
 
-.reprove-button{
-    margin: 1em; 
-    padding-left: 2.7em !important; 
-    padding-right: 2.7em !important; 
-    background-color: #f04124;
+.app-rep-button:hover{
+    background-color: #666666;
 }
+
+.publish-button:hover{
+    background-color: #73c893;
+}
+
+.unpublish-button:hover{
+    background-color: #fac054;
+}
+
+.reprove-button:hover, .delete-button:hover{
+    background-color: #f57f6c;
+}
+
+.app-rep-button, .publish-button, .reprove-button, .unpublish-button, .delete-button{
+    border-radius: 1000px;
+}
+
+/* Manage Users */
+.roles select{
+    margin-bottom: 0;
+}
+
+.block input{
+    margin-bottom: 0;
+}
+
+
 
 
 
