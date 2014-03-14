@@ -219,3 +219,48 @@ label[for="facebook"], label[for="googleplus"], label[for="linkedin"]{
     cursor: default;
 }
 
+/* Approval Board */
+
+.tabs dd{
+    font-weight: bold;
+    width: 33.333333%;
+}
+
+.tabs dd a{
+    text-align: center;
+    color: #008cba;
+}
+
+.pendingnews table, .approvednews table, .reprovednews table{
+    width: 100%;
+}
+
+.pendingnews td, .approvednews td, .reprovednews td{
+    margin: 0;
+    padding: 0;
+    padding-left: 1em !important;
+}
+
+#publish-button{
+    margin: 1em;
+    padding-left: 2.7em; 
+    padding-right: 2.7em; 
+    background-color: #43ac6a;
+}
+
+#unpublish-button{
+    margin: 1em;
+    padding-left: 2.09em; 
+    padding-right: 2.09em; 
+    background-color: #f8a40a !important;
+}
+
+#delete-button{
+    margin: 1em; 
+    padding-left: 3.0095em;
+    padding-right: 3.0095em;
+    background-color: #f04124 !important;
+}
+
+
+
