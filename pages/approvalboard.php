@@ -20,24 +20,24 @@
                                 <tr>
                                     <th width="500">Title</th>
                                     <th width="270">Creator</th>
-                                    <th width="50"></th>
+                                    <th width="50" class="app-rep-button" onclick="$('.reprove-button, .publish-button').toggleClass('publish-button').toggleClass('reprove-button');">Change Approval</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><a>The countdown</a></td>
                                     <td>Steve Nojob</td>
-                                    <td><a href="#" class="tiny button radious" id="publish-button">Publish</a></td>
+                                    <td><a href="#" class="tiny button radious publish-button ">Publish</a></td>
                                 </tr>
                                 <tr>
                                     <td><a>Important things</a></td>
                                     <td>Catherine York</td>
-                                    <td><a href="#" class="tiny button radious" id="publish-button">Publish</a></td>
+                                    <td><a href="#" class="tiny button radious publish-button">Publish</a></td>
                                 </tr>
                                 <tr>
                                     <td><a>Great questions</a></td>
                                     <td>Francesco Silva</td>
-                                    <td><a href="#" class="tiny button radious" id="publish-button">Publish</a></td>
+                                    <td><a href="#" class="tiny button radious publish-button">Publish</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -61,17 +61,17 @@
                                 <tr>
                                     <td><a>The dangers of the sun</a></td>
                                     <td>Sarah Parker</td>
-                                    <td><a href="#" class="tiny button radious" id="unpublish-button">Unpublish</a></td>
+                                    <td><a href="#" class="tiny button radious unpublish-button">Unpublish</a></td>
                                 </tr>
                                 <tr>
                                     <td><a>Another day in the life of a college student</a></td>
                                     <td>Rita Cae</td>
-                                    <td><a href="#" class="tiny button radious" id="unpublish-button">Unpublish</a></td>
+                                    <td><a href="#" class="tiny button radious unpublish-button">Unpublish</a></td>
                                 </tr>
                                 <tr>
                                     <td><a>The wonderful days of summer</a></td>
                                     <td>Yoine Lu</td>
-                                    <td><a href="#" class="tiny button radious" id="unpublish-button">Unpublish</a></td>
+                                    <td><a href="#" class="tiny button radious unpublish-button">Unpublish</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -94,17 +94,17 @@
                                 <tr>
                                     <td><a>Real stuff happened</a></td>
                                     <td>Jonh Doe</td>
-                                    <td><a href="#" class="tiny button radious" id="delete-button">Delete</a></td>
+                                    <td><a href="#" class="tiny button radious delete-button">Delete</a></td>
                                 </tr>
                                 <tr>
                                     <td><a>New news</a></td>
                                     <td>Emma Derpson</td>
-                                    <td><a href="#" class="tiny button radious" id="delete-button">Delete</a></td>
+                                    <td><a href="#" class="tiny button radious delete-button">Delete</a></td>
                                 </tr>
                                 <tr>
                                     <td><a>Who let the dogs out?</a></td>
                                     <td>Judite Almeida</td>
-                                    <td><a href="#" class="tiny button radious" id="delete-button">Delete</a></td>
+                                    <td><a href="#" class="tiny button radious delete-button">Delete</a></td>
                                 </tr>
                             </tbody>
                         </table>

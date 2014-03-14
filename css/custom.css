@@ -241,25 +241,39 @@ label[for="facebook"], label[for="googleplus"], label[for="linkedin"]{
     padding-left: 1em !important;
 }
 
-#publish-button{
+.app-rep-button{
+    color: #ffffff;
+    background-color: #404040;
+    text-align: center;
+    font-weight: normal;
+}
+
+.publish-button{
     margin: 1em;
-    padding-left: 2.7em; 
-    padding-right: 2.7em; 
+    padding-left: 2.7em !important; 
+    padding-right: 2.7em !important; 
     background-color: #43ac6a;
 }
 
-#unpublish-button{
+.unpublish-button{
     margin: 1em;
-    padding-left: 2.09em; 
-    padding-right: 2.09em; 
-    background-color: #f8a40a !important;
+    padding-left: 2.09em !important; 
+    padding-right: 2.09em !important; 
+    background-color: #f8a40a;
 }
 
-#delete-button{
+.delete-button{
     margin: 1em; 
-    padding-left: 3.0095em;
-    padding-right: 3.0095em;
-    background-color: #f04124 !important;
+    padding-left: 3.0095em !important;
+    padding-right: 3.0095em !important;
+    background-color: #f04124;
+}
+
+.reprove-button{
+    margin: 1em; 
+    padding-left: 2.7em !important; 
+    padding-right: 2.7em !important; 
+    background-color: #f04124;
 }
 
 
