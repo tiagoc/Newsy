@@ -8,9 +8,8 @@
     <div class="large-9 columns" role="content">
     
         <article>
-            <h3><a href="#">News Title</a></h3>
+            <h3><a href="#">News Title</a><i class="fi-star favourite-star-disabled" onclick="$('.favourite-star-disabled, .favourite-star-enabled').toggleClass('favourite-star-disabled').toggleClass('favourite-star-enabled');"></i></h3>
             <h4><small>Written by <a href="#">John Smith</a> on August 12, 2012.</small></h4>
-            <a><i class="fi-star"></i></a> <a><i class="fi-star"></i></a> <a><i class="fi-star"></i></a> <a><i class="fi-star"></i></a> <a><i class="fi-star"></i></a>
             <p></p>
 
             <div class="row">
@@ -28,6 +27,8 @@
                 <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
 
                 <div id="category"><i class="fi-price-tag"></i> Categories</div> <p>Politics, Food </p>
+                <div id="rating">Rating: <a id="stars">
+                <i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i></div> 
                 <p class="text-right"><i class="fi-comment"></i> 0 comments</p> 
         </article>
         

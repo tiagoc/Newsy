@@ -73,10 +73,22 @@ textarea{
 }
 
 /* Main Page - News */
-#category{
+#category, #rating{
     padding-bottom: 3px;
     color: #008cba;
     font-weight: bold;
+}
+
+.favourite-star-enabled, .favourite-star-disabled{
+    float:right;
+}
+
+.favourite-star-enabled::before{
+    color: #c98406;
+}
+
+.rating-star-enabled::before{
+    color: #c98406;
 }
 
 /* Article */
