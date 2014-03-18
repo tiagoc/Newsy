@@ -84,11 +84,19 @@ textarea{
 }
 
 .favourite-star-enabled::before{
-    color: #c98406;
+    color: #b6b616;
+}
+
+.favourite-star-disabled::before{
+    color: #C2C2C2;
 }
 
 .rating-star-enabled::before{
-    color: #c98406;
+    color: #b6b616;
+}
+
+.rating-star-disabled::before{
+    color: #C2C2C2;
 }
 
 /* Article */

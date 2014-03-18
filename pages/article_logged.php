@@ -28,7 +28,35 @@
 
                 <div id="category"><i class="fi-price-tag"></i> Categories</div> <p>Politics, Food </p>
                 <div id="rating">Rating: <a id="stars">
-                <i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i></div> 
+                <script type="text/javascript">
+                
+                function selectStars(estrela) {
+                
+                    var found = false;
+                
+                    for (var i = 0; i < $("#rating").find(".fi-star").length; i++) {
+                
+                        if(!found) 
+                        {    
+                            $("#rating").find(".fi-star").eq(i).addClass('rating-star-enabled').removeClass('rating-star-disabled');
+                        } 
+                        else 
+                        {
+                            $("#rating").find(".fi-star").eq(i).removeClass('rating-star-enabled').addClass('rating-star-disabled');
+                        } 
+
+                        if($(estrela).position().top == $("#rating").find(".fi-star").eq(i).position().top && $(estrela).position().left == $("#rating").find(".fi-star").eq(i).position().left) 
+                        {
+                            found = true;
+                        }
+                    }
+                }
+
+                $(document).ready(function () {
+                    $("#rating").find(".fi-star").attr('onclick', 'selectStars(this);');
+                });
+                </script>
+                <i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i></div> 
                 <p class="text-right"><i class="fi-comment"></i> 0 comments</p> 
         </article>
         
