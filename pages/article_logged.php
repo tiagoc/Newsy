@@ -64,12 +64,12 @@
         <div id="comments">
         
             <div class="panel radius">
-                <h5><small><div class="comment-username">José Miranda</div><div class="comment-datetime">11/03/2014   22:15</div></small></h5>
+                <h5><small><div class="comment-username">José Miranda</div><div class="comment-datetime">11/03/2014   22:15</div><button type="button" class="comment-delete">Delete</button><button type="button" class="comment-edit">Edit</button></small></h5>
                 <p>This is some great news!</p>
             </div>
             
             <div class="panel radius">
-                <h5><small><div class="comment-username">Roger Dickinson</div><div class="comment-datetime">11/03/2014   22:30</div></small></h5>
+                <h5><small><div class="comment-username">Roger Dickinson</div><div class="comment-datetime">11/03/2014   22:30</div><button type="button" class="comment-delete">Delete</button><button type="button" class="comment-edit">Edit</button></small></h5>
                 <p>I fondly agree with Miranda!</p>
             </div>
             

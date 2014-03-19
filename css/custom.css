@@ -100,12 +100,36 @@ textarea{
 }
 
 /* Article */
-.comment-username, .comment-datetime{
+.comment-username, .comment-datetime, .comment-edit, .comment-delete{
     display: inline;
 }
 
 .comment-username{
     margin-right: 1rem;
+}
+
+.comment-edit, .comment-delete{
+    font-size: 1em;
+    float: right;
+    border: solid;
+    border-radius: 1000px;
+    margin: -1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+.comment-edit{
+    margin-right: 1.5em;
+}
+
+.comment-delete{
+    background-color: #f0563e;
+}
+
+.comment-delete:hover{
+    background-color: #ac2e19;
 }
 
 /* Create News */
