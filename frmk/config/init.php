@@ -9,7 +9,7 @@
   $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $conn->exec('SET search_path TO proto');
+  $conn->exec('SET search_path TO frmk');
 
   include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
   
