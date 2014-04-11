@@ -2,8 +2,8 @@
   session_set_cookie_params(3600, '/~lbaw1336');
   session_start();
 
-  $BASE_DIR = '/opt/lbaw/lbaw1336/public_html/proto/';
-  $BASE_URL = '/~lbaw1336/proto/';
+  $BASE_DIR = '/opt/lbaw/lbaw1336/public_html/frmk/';
+  $BASE_URL = '/~lbaw1336/frmk/';
 
   $conn = new PDO('pgsql:host=vdbm;dbname=lbaw1336', 'lbaw1336', 'sK264hg6');
   $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
