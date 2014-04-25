@@ -4,13 +4,13 @@
 session_set_cookie_params(3600, '/Newsy/proto/');
 session_start();
 
-//$BASE_DIR = '/opt/lbaw/lbaw1336/public_html/proto/';
-//$BASE_URL = '/~lbaw1336/proto/';
+$BASE_DIR = '/opt/lbaw/lbaw1336/public_html/proto/';
+$BASE_URL = '/~lbaw1336/proto/';
 
 $conn = new PDO('pgsql:host=vdbm.fe.up.pt;dbname=lbaw1336', 'lbaw1336', 'sK264hg6');
 
-$BASE_DIR = '/srv/http/Newsy/proto/';
-$BASE_URL = '/Newsy/proto/';
+//$BASE_DIR = '/srv/http/Newsy/proto/';
+//$BASE_URL = '/Newsy/proto/';
 
 //$conn = new PDO('pgsql:host=localhost;dbname=lbaw1336', 'lbaw1336', 'sK264hg6');
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
