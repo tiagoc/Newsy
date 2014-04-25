@@ -1,8 +1,6 @@
 {include 'common/header.tpl'}
 <!-- Main Page Content and Sidebar -->
 
-{$news}
-
 <div class="row">
 
     <!-- Main Blog Content -->

@@ -27,7 +27,7 @@
         <script src="{$BASE_URL}javascript/responsive-tables.js"></script>
 
         <script>
-            
+
         </script>
     </head>
 
@@ -43,7 +43,7 @@
                 </span>
 
                 <span class="right">  
-                    {if $USERNAME}
+                    {if $NAME}
                         {include file='common/menu_logged_in.tpl'}
                     {else}
                         {include file='common/menu_logged_out.tpl'}
@@ -51,13 +51,19 @@
                 </span>    
 
                 <div id="loginModal" class="reveal-modal small" data-reveal>
-                    <form>
+                    <form action="{$BASE_URL}actions/users/login.php" method="post">
                         <div class="row">
                             <div class="small-8 small-centered columns">
                                 <h1>Login</h1>
-                                <input type="text" name="username" placeholder="username"/>                                
+                                <input type="text" name="email" placeholder="email"/>                                
                                 <input type="password" name="password" placeholder="password"/>  
-                                <input type="submit" class="right button tiny round"/>                                         
+                                <input type="submit" value="Submit" class="right button tiny round"/>                                
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="small-8 small-centered columns">
+                                Don't have an account? Register <a href="{$BASE_URL}/pages/users/new.php">here</a>!
                             </div>
                         </div>
                     </form>

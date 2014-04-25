@@ -1,6 +1,7 @@
 <?php
 
 function getAllNews() {
+    global $conn;
     $stmt = $conn->prepare("SELECT *
                             FROM news;                           
     ");
@@ -10,6 +11,7 @@ function getAllNews() {
 }
 
 function getNews($start_id, $limit) {
+    global $conn;
     $stmt = $conn->prepare("SELECT *
                             FROM news
                             WHERE id > ? LIMIT ?;
@@ -20,9 +22,17 @@ function getNews($start_id, $limit) {
 }
 
 function getArticle($article_id) {
+    global $conn;
     $stmt = $conn->prepare("SELECT *
                             FROM news
                             WHERE id = ?;
     ");
     $stmt->execute(array($article_id));
+}
+
+function submitNews($title, $synopsis, $body) {
+    global $conn;
+    $stmt = $conn->prepare("INSERT INTO news
+                            VALUES(DEFAULT, ?, ?, ?, 0, 0, $_SESSION[id];
+    ");
 }
