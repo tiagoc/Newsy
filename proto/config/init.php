@@ -1,16 +1,16 @@
 <?php
 
-session_set_cookie_params(3600, '/~lbaw1336');
-//session_set_cookie_params(3600, '/Newsy/proto/');
+//session_set_cookie_params(3600, '/~lbaw1336');
+session_set_cookie_params(3600, '/Newsy/proto/');
 session_start();
 
-$BASE_DIR = '/opt/lbaw/lbaw1336/public_html/proto/';
-$BASE_URL = '/~lbaw1336/proto/';
+//$BASE_DIR = '/opt/lbaw/lbaw1336/public_html/proto/';
+//$BASE_URL = '/~lbaw1336/proto/';
 
 $conn = new PDO('pgsql:host=vdbm.fe.up.pt;dbname=lbaw1336', 'lbaw1336', 'sK264hg6');
 
-//$BASE_DIR = '/srv/http/Newsy/proto/';
-//$BASE_URL = '/Newsy/proto/';
+$BASE_DIR = '/srv/http/Newsy/proto/';
+$BASE_URL = '/Newsy/proto/';
 
 //$conn = new PDO('pgsql:host=localhost;dbname=lbaw1336', 'lbaw1336', 'sK264hg6');
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -38,7 +38,4 @@ unset($_SESSION['success_messages']);
 unset($_SESSION['error_messages']);
 unset($_SESSION['field_errors']);
 unset($_SESSION['form_values']);
-unset($_SESSION['email']);
-unset($_SESSION['role']);
-unset($_SESSION['name']);
 ?>

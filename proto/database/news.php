@@ -33,6 +33,12 @@ function getArticle($article_id) {
 function submitNews($title, $synopsis, $body) {
     global $conn;
     $stmt = $conn->prepare("INSERT INTO news
-                            VALUES(DEFAULT, ?, ?, ?, 0, 0, $_SESSION[id];
-    ");
+                            VALUES(DEFAULT, ?, ?, ?, 0, 0, 'submitted' ,$_SESSION[id]);");
+    $stmt->execute(array($title, $synopsis, $body));    
+}
+
+function saveDraft($title, $synopsis, $body) {
+    global $conn;
+    $stmt = $conn->prepare("INSERT INTO news VALUES(DEFAULT, ?, ?, ?, 0, 0, 'draft' ,$_SESSION[id]);");
+    $stmt->execute(array($title, $synopsis, $body));
 }

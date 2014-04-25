@@ -18,26 +18,29 @@ function isLoginCorrect($email, $password) {
 
 function getUserName($email) {
     global $conn;
-    $stmt = $conn->prepare("SELECT name from users where email = ?");
+    $stmt = $conn->prepare("SELECT name from users where email = ?;");
     $stmt->execute(array($email));
 
-    return $stmt->fetch() == true;
+    $return = $stmt->fetch();
+    return $return['name'];
 }
 
 function getUserID($email) {
     global $conn;
-    $stmt = $conn->prepare("SELECT id from users where email = ?");
+    $stmt = $conn->prepare("SELECT id from users where email = ?;");
     $stmt->execute(array($email));
 
-    return $stmt->fetch() == true;
+    $return = $stmt->fetch();
+    return $return['id'];
 }
 
 function getUserRole($email) {
     global $conn;
-    $stmt = $conn->prepare("SELECT role from users where email = ?");
+    $stmt = $conn->prepare("SELECT role from users where email = ?;");
     $stmt->execute(array($email));
 
-    return $stmt->fetch() == true;
+    $return = $stmt->fetch();
+    return $return['email'];
 }
 
 ?>

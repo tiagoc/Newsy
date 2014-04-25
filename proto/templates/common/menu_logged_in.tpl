@@ -2,5 +2,5 @@
 <ul id="user-menu" data-dropdown-content class="f-dropdown">
     <li><a href="#"><i class="fi-list"></i>News</a></li>
     <li><a href="#"><i class="fi-torso"></i>My Profile</a></li>
-    <li><a href="#"><i class="fi-lock"></i>Logout</a></li>     
+    <li><a href="{$BASE_URL}actions/users/logout.php"><i class="fi-lock"></i>Logout</a></li>     
 </ul>
