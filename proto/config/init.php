@@ -1,7 +1,7 @@
 <?php
 
-//session_set_cookie_params(3600, '/~lbaw1336');
-session_set_cookie_params(3600, '/Newsy/proto/');
+session_set_cookie_params(3600, '/~lbaw1336');
+//session_set_cookie_params(3600, '/Newsy/proto/');
 session_start();
 
 $BASE_DIR = '/opt/lbaw/lbaw1336/public_html/proto/';
