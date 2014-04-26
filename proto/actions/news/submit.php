@@ -8,3 +8,5 @@ $synopsis = $_POST['synopsis'];
 $body = $_POST['body'];
 
 submitNews($title, $synopsis, $body);
+
+header("Location: $BASE_URL"."pages/users/mynews.php");

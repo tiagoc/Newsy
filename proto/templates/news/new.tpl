@@ -1,5 +1,5 @@
 {include 'common/header.tpl'}
-<form action="{$BASE_URL}actions/news/submit.php" method="post">
+<form method="post" name="form">
     <div class="row">
         <div class="small-12 columns">
             <h1>Create New Article</h1>
@@ -31,8 +31,8 @@
                 </div>
                 <div class="row">
                     <div class="large-10 columns">
-                        <input type="submit"  value= "Save" class="right button tiny round"/>
-                        <input type="submit"  value= "Submit" class="right button tiny round"/>
+                        <input type="submit" value= "Save" class="right button tiny round" onclick="this.form.action='{$BASE_URL}actions/news/save.php'"/>
+                        <input type="submit" value= "Submit" class="right button tiny round" onclick="this.form.action='{$BASE_URL}actions/news/submit.php'"/>
                     </div>
                 </div>
             </form>    
