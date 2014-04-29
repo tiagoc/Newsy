@@ -33,7 +33,7 @@
                                     {if $article.state == 'draft'}                            
                                         <tr>
                                             <td><a href='{$BASE_URL}pages/news/view.php?article={$article.id}'>{$article.title}</a></td>
-                                            <td>22/02/2014</td>
+                                            <td>{$dates[$article['id']]["draftdate"]}</td>
                                             <td><a href="#" class="tiny button radious submit-button expand">Submit</a></td>
                                         </tr>
                                     {/if}
@@ -66,14 +66,13 @@
                                     {if $article.state == 'submitted'}  
                                         <tr>
                                             <td><a href='{$BASE_URL}pages/news/view.php?article={$article.id}'>{$article.title}</a></td>
-                                            <td>21/02/2014</td>
+                                            <td>{$dates[$article['id']]["submissiondate"]}</td>
                                             <td><a href="#" class="tiny button alert radious delete-button">Delete</a></td>
                                         </tr>
                                     {/if}
                                 {/foreach}
                             </tbody>
                         </table>
-
                     </div>
 
                     <!--  Pending approval tab end -->
@@ -100,7 +99,7 @@
                                     {if $article.state == 'approved'}  
                                         <tr>
                                             <td><a href='{$BASE_URL}pages/news/view.php?article={$article.id}'>{$article.title}</a></td>
-                                            <td>21/02/2014</td>
+                                            <td>{$dates[$article['id']]["publishdate"]}</td>
                                             <td><a href="#" class="tiny button alert radious delete-button">Delete</a></td>
                                         </tr>
                                     {/if}
@@ -136,8 +135,8 @@
                                     {if $article.state == 'rejected'}  
                                         <tr>
                                             <td><a href='{$BASE_URL}pages/news/view.php?article={$article.id}'>{$article.title}</a></td>
-                                            <td>Needs some work on the second paragraph</td>
-                                            <td>21/02/2014</td>
+                                            <td>{$reasons[$article['id']]['reason']}</td>
+                                            <td>{$dates[$article['id']]["rejectdate"]}</td>
                                             <td><a href="#" class="tiny button alert radious delete-button">Delete</a></td>
                                         </tr>
                                     {/if}
@@ -158,16 +157,14 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th width="500">Title</th>
-                                    <th width="270">Created on</th>
+                                    <th width="770">Title</th>
                                     <th width="50">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {foreach $news as $article}
                                     <tr>
-                                        <td><a>{$article.title}</a></td>
-                                        <td>12/03/2014</td>
+                                        <td><a href='{$BASE_URL}pages/news/view.php?article={$article.id}'>{$article.title}</a></td>               
                                         <td><a href="#" class="tiny button disabled radious">{$article.state}</a></td>
                                     </tr>
                                 {/foreach}
