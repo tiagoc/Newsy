@@ -28,21 +28,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><a>The countdown</a></td>
-                                    <td>Steve Nojob</td>
-                                    <td><a href="#" class="tiny button radious publish-button">Publish</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a>Important things</a></td>
-                                    <td>Catherine York</td>
-                                    <td><a href="#" class="tiny button radious publish-button">Publish</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a>Great questions</a></td>
-                                    <td>Francesco Silva</td>
-                                    <td><a href="#" class="tiny button radious publish-button">Publish</a></td>
-                                </tr>
+                                {foreach $submittednews as $article}
+                                <form action="{$BASE_URL}actions/news/publish.php" method='post'>
+                                    <tr>                                        
+                                        <td><a href='{$BASE_URL}pages/news/view.php?article={$article.id}'>{$article.title}</a></td>
+                                        <td><a href="{$BASE_URL}pages/users/journalistprofile.php?id={$article.journalist_id}">{$article.name}</a></td>
+                                        <td><input type="submit" class="tiny button radious publish-button" value="Publish"/></td>
+
+                                    <input type="hidden" name="id" value="{$article.id}"/>
+                                    </tr>
+                                </form>
+                            {/foreach}
                             </tbody>
                         </table>
                     </div>

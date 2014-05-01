@@ -30,14 +30,18 @@
                             </thead>
                             <tbody>                      
                                 {foreach $news as $article}
-                                    {if $article.state == 'draft'}                            
+                                    {if $article.state == 'Draft'}                            
+                                    <form action="{$BASE_URL}actions/news/submit.php" method='post'>
                                         <tr>
                                             <td><a href='{$BASE_URL}pages/news/view.php?article={$article.id}'>{$article.title}</a></td>
-                                            <td>{$dates[$article['id']]["draftdate"]}</td>
-                                            <td><a href="#" class="tiny button radious submit-button expand">Submit</a></td>
+                                            <td>{$dates[$article['id']]["draftdate"]}</td>                                            
+                                            <td><input type="submit" class="tiny button radious submit-button expand" value="Submit"></td>
+                                            
+                                            <input type="hidden" name="id" value="{$article.id}">
                                         </tr>
-                                    {/if}
-                                {/foreach}
+                                    </form>
+                                {/if}
+                            {/foreach}
                             </tbody>
                         </table>
 
@@ -63,7 +67,7 @@
                             </thead>
                             <tbody>
                                 {foreach $news as $article}
-                                    {if $article.state == 'submitted'}  
+                                    {if $article.state == 'Submitted'}  
                                         <tr>
                                             <td><a href='{$BASE_URL}pages/news/view.php?article={$article.id}'>{$article.title}</a></td>
                                             <td>{$dates[$article['id']]["submissiondate"]}</td>
@@ -96,7 +100,7 @@
                             </thead>
                             <tbody>
                                 {foreach $news as $article}
-                                    {if $article.state == 'approved'}  
+                                    {if $article.state == 'Approved'}  
                                         <tr>
                                             <td><a href='{$BASE_URL}pages/news/view.php?article={$article.id}'>{$article.title}</a></td>
                                             <td>{$dates[$article['id']]["publishdate"]}</td>
@@ -131,8 +135,8 @@
                             </thead>
                             <tbody>
                                 <tr>                           
-                                {foreach $news as $article}
-                                    {if $article.state == 'rejected'}  
+                                    {foreach $news as $article}
+                                        {if $article.state == 'Rejected'}  
                                         <tr>
                                             <td><a href='{$BASE_URL}pages/news/view.php?article={$article.id}'>{$article.title}</a></td>
                                             <td>{$reasons[$article['id']]['reason']}</td>
