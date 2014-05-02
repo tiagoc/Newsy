@@ -32,7 +32,7 @@ try {
     }
 
     $_SESSION['form_values'] = $_POST;
-    //header("Location: $BASE_URL" . 'pages/users/new.php');
+    header("Location: $BASE_URL" . 'pages/users/new.php');
     exit;
 }
 $_SESSION['success_messages'][] = 'User registered successfully';
