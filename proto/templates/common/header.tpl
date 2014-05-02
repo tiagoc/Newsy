@@ -7,10 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Newsy</title>
 
-        <meta name="description" content="Documentation and reference library for ZURB Foundation. JavaScript, CSS, components, grid and more." />
-        <meta name="author" content="ZURB, inc. ZURB network also includes zurb.com" />
-        <meta name="copyright" content="ZURB, inc. Copyright (c) 2013" />
-
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{$BASE_URL}css/foundation-icons.css" />
         <link rel="stylesheet" href="{$BASE_URL}css/foundation.min.css" />
@@ -25,6 +21,8 @@
         <script src="{$BASE_URL}javascript/foundation/foundation.dropdown.js"></script>
         <script src="{$BASE_URL}javascript/Chart.min.js"></script>
         <script src="{$BASE_URL}javascript/responsive-tables.js"></script>
+        
+        <script src="{$BASE_URL}javascript/news.js"></script>
 
         <script>
 

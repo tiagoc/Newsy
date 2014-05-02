@@ -30,12 +30,12 @@
                             <tbody>
                                 {foreach $submittednews as $article}
                                 <form action="{$BASE_URL}actions/news/publish.php" method='post'>
-                                    <tr>                                        
+                                    <tr id="draft-{$article-id}">                                        
                                         <td><a href='{$BASE_URL}pages/news/view.php?article={$article.id}'>{$article.title}</a></td>
                                         <td><a href="{$BASE_URL}pages/users/journalistprofile.php?id={$article.journalist_id}">{$article.name}</a></td>
                                         <td><input type="submit" class="tiny button radious publish-button" value="Publish"/></td>
 
-                                    <input type="hidden" name="id" value="{$article.id}"/>
+                                        <input type="hidden" name="id" value="{$article.id}"/>
                                     </tr>
                                 </form>
                             {/foreach}
