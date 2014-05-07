@@ -1,9 +1,9 @@
 <?php
 
-function getAllNews() {
+function getAllPublishedNews() {
     global $conn;
-    $stmt = $conn->prepare("SELECT *
-                            FROM news;                           
+    $stmt = $conn->prepare("SELECT id, title, synopsis, body, journalist_id
+                            FROM news WHERE state = 'published';                           
     ");
     $stmt->execute();
 
@@ -46,11 +46,42 @@ function publishNews($article_id) {
     return $stmt->execute(array($article_id));
 }
 
-function submitNews($title, $synopsis, $body) {
+function insertCategories($categories) { // accepts an array of category names
     global $conn;
-    $stmt = $conn->prepare("INSERT INTO news
-                            VALUES(DEFAULT, ?, ?, ?, DEFAULT, DEFAULT, 'submitted', DEFAULT ,$_SESSION[id]);");
-    return $stmt->execute(array($title, $synopsis, $body));
+
+    foreach ($categories as $c) {
+        $stmt = $conn->prepare("INSERT INTO categories VALUES(DEFAULT, ?, DEFAULT);");
+        $stmt->execute(array($c));
+    }
+}
+
+function associateCategoriesNews($categories, $news_id) {
+    global $conn;
+
+    foreach ($categories as $c) {
+        $stmt = $conn->prepare("INSERT INTO categoriesnews values ((SELECT id FROM categories WHERE name = ?),?);");
+        $stmt->execute(array($c, $news_id));
+    }
+}
+
+function submitNews($title, $synopsis, $body, $categories) {
+    global $conn;
+
+    /* insert non-existent categories */
+    insertCategories($categories);
+
+    /* insert article per-say */
+    $conn->query("BEGIN;");
+    $stmt = $conn->prepare("INSERT INTO news VALUES(DEFAULT, ?, ?, ?, DEFAULT, DEFAULT, 'submitted', DEFAULT ,$_SESSION[id]);");
+    $stmt->execute(array($title, $synopsis, $body));
+    $stmt = $conn->prepare("SELECT id from news order by id desc limit 1");
+    $stmt->execute();
+    $id_array = $stmt->fetch();
+    $conn->query("COMMIT;");
+
+    /* associate article to categories */
+    $id = $id_array['id'];
+    associateCategoriesNews($categories, $news_id);
 }
 
 function submitExistingNews($article_id) {
@@ -60,11 +91,26 @@ function submitExistingNews($article_id) {
     return $stmt->execute(array($article_id));
 }
 
-function saveDraft($title, $synopsis, $body) {
+function saveDraft($title, $synopsis, $body, $categories) {
     global $conn;
-    $stmt = $conn->prepare("INSERT INTO news
-                            VALUES(DEFAULT, ?, ?, ?, DEFAULT, DEFAULT, 'draft', DEFAULT ,$_SESSION[id]);");
-    return $stmt->execute(array($title, $synopsis, $body));
+
+    insertCategories($categories);
+
+    /* insert non-existent categories */
+    insertCategories($categories);
+
+    /* insert article per-say */
+    $conn->query("BEGIN;");
+    $stmt = $conn->prepare("INSERT INTO news VALUES(DEFAULT, ?, ?, ?, DEFAULT, DEFAULT, 'draft', DEFAULT ,$_SESSION[id]);");
+    $stmt->execute(array($title, $synopsis, $body));
+    $stmt = $conn->prepare("SELECT id from news order by id desc limit 1");
+    $stmt->execute();
+    $id_array = $stmt->fetch();
+    $conn->query("COMMIT;");
+
+    /* associate article to categories */
+    $id = $id_array['id'];
+    associateCategoriesNews($categories, $news_id);
 }
 
 function saveExistingNews($article_id) {
@@ -147,27 +193,27 @@ function deleteNews($news_id) {
 
 function getAllSubmittedNews() {
     global $conn;
-    
+
     $stmt = $conn->prepare("SELECT news.id,title,name,journalist_id FROM news join users on users.id = news.journalist_id WHERE state = 'submitted';");
     $stmt->execute();
-    
+
     return $stmt->fetchAll();
 }
 
 function getAllDrafts() {
     global $conn;
-    
+
     $stmt = $conn->prepare("SELECT news.id,title,name,journalist_id FROM news join users on users.id = news.journalist_id WHERE state = 'draft';");
     $stmt->execute();
-    
+
     return $stmt->fetchAll();
 }
 
 function getAllRejects() {
     global $conn;
-    
+
     $stmt = $conn->prepare("SELECT news.id,title,reason,name,journalist_id FROM news join users on users.id = news.journalist_id WHERE state = 'rejected';");
     $stmt->execute();
-    
+
     return $stmt->fetchAll();
 }
