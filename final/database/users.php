@@ -43,4 +43,11 @@ function getUserRole($email) {
     return $return['email'];
 }
 
-?>
+function doesUserExists($email) {
+    global $conn;
+    
+    $stmt = $conn->prepare("SELECT id from users where email = ?;");
+    $stmt->execute(array($email));
+    
+    return $stmt->fetch() == true;    
+}
