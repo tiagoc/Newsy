@@ -220,12 +220,20 @@ function getAllRejects() {
 
 function getPublishedNewsByQuery($query) {
     global $conn;
-    
-    global $conn;
+
     $stmt = $conn->prepare("SELECT id, title, synopsis, body, journalist_id
                             FROM news WHERE state = 'published' AND (title LIKE ? OR synopsis LIKE ?);                           
     ");
     $stmt->execute(array('%'.$query.'%','%'.$query.'%'));
 
+    return $stmt->fetchAll();
+}
+
+function getComments($news_id) {
+    global $conn;
+    
+    $stmt = $conn->prepare("SELECT comments.id, content, published_at, name FROM comments join users on (comments.user_id = users.id) WHERE news_id = ?;");
+    $stmt->execute(array($news_id));
+    
     return $stmt->fetchAll();
 }

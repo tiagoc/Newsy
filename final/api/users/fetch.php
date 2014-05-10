@@ -1,1 +1,10 @@
 <?php
+
+include_once('../../config/init.php');
+include_once($BASE_DIR . 'database/users.php');
+
+$start = $_GET['start']? : 1; // ternary operator; in doubt, check http://stackoverflow.com/questions/4329697/conditionally-assigning-php-values
+$n = $_GET['n']? : 15;
+
+$users = getUsers($start, $n);
+echo json_encode($users);
