@@ -10,13 +10,13 @@ function getAllPublishedNews() {
     return $stmt->fetchAll();
 }
 
-function getNews($start_id, $limit) {
+function getNews($start_id, $limit, $state) {
     global $conn;
-    $stmt = $conn->prepare("SELECT *
+    $stmt = $conn->prepare("SELECT id, title, synopsis, body, journalist_id
                             FROM news
-                            WHERE id > ? LIMIT ?;
+                            WHERE state = ? AND id >= ? LIMIT ?;
     ");
-    $stmt->execute(array($start_id, $limit));
+    $stmt->execute(array($state, $start_id, $limit));
 
     return $stmt->fetchAll();
 }
@@ -214,6 +214,18 @@ function getAllRejects() {
 
     $stmt = $conn->prepare("SELECT news.id,title,reason,name,journalist_id FROM news join users on users.id = news.journalist_id WHERE state = 'rejected';");
     $stmt->execute();
+
+    return $stmt->fetchAll();
+}
+
+function getPublishedNewsByQuery($query) {
+    global $conn;
+    
+    global $conn;
+    $stmt = $conn->prepare("SELECT id, title, synopsis, body, journalist_id
+                            FROM news WHERE state = 'published' AND (title LIKE ? OR synopsis LIKE ?);                           
+    ");
+    $stmt->execute(array('%'.$query.'%','%'.$query.'%'));
 
     return $stmt->fetchAll();
 }
