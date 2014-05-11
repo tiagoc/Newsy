@@ -21,7 +21,7 @@
         <script src="{$BASE_URL}javascript/foundation/foundation.dropdown.js"></script>
         <script src="{$BASE_URL}javascript/Chart.min.js"></script>
         <script src="{$BASE_URL}javascript/responsive-tables.js"></script>
-        
+        <script src="{$BASE_URL}javascript/main.js"></script>
         <script src="{$BASE_URL}javascript/news.js"></script>
 
         <script>

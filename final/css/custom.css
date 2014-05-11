@@ -396,5 +396,29 @@ label[for="facebook"], label[for="googleplus"], label[for="linkedin"]{
     padding-right: 2.18em !important;
 }
 
+/* MESSAGES */
 
+.error {
+  background-color: #FFAAAA;
+  padding: 10px;
+  color: #333;
+  font-weight: bold;
+}
 
+.success {
+  background-color: #AAFFAA;
+  padding: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.close {
+  float: right;
+  text-decoration: none;
+  color: #666;
+}
+
+.field_error {
+  color: red;
+  font-size: 70%;
+}
