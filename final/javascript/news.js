@@ -57,3 +57,20 @@ function fillCategoryWidget() {
         });
     });
 }
+
+function selectStars(estrela) {
+    var found = false;
+    for (var i = 0; i < $("#rating").find(".fi-star").length; i++) {
+
+        if (!found) {
+            $("#rating").find(".fi-star").eq(i).addClass('rating-star-enabled').removeClass('rating-star-disabled');
+        }
+        else {
+            $("#rating").find(".fi-star").eq(i).removeClass('rating-star-enabled').addClass('rating-star-disabled');
+        }
+
+        if ($(estrela).position().top == $("#rating").find(".fi-star").eq(i).position().top && $(estrela).position().left == $("#rating").find(".fi-star").eq(i).position().left) {
+            found = true;
+        }
+    }
+}

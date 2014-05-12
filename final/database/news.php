@@ -23,9 +23,8 @@ function getNews($start_id, $limit, $state) {
 
 function getArticle($article_id) {
     global $conn;
-    $stmt = $conn->prepare("SELECT *
-                            FROM news
-                            WHERE id = ?;
+    $stmt = $conn->prepare("SELECT news.id, title, synopsis, body, journalist_id, name as journalist, ncomments
+                            FROM news join users on (news.journalist_id = users.id) WHERE state = 'published' AND                            news.id = ?;
     ");
     $stmt->execute(array($article_id));
 
