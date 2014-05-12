@@ -2,8 +2,8 @@
 
 function getAllPublishedNews() {
     global $conn;
-    $stmt = $conn->prepare("SELECT id, title, synopsis, body, journalist_id
-                            FROM news WHERE state = 'published';                           
+    $stmt = $conn->prepare("SELECT news.id, title, synopsis, body, journalist_id, name as journalist, ncomments
+                            FROM news join users on (news.journalist_id = users.id) WHERE state = 'published';                           
     ");
     $stmt->execute();
 
@@ -12,9 +12,9 @@ function getAllPublishedNews() {
 
 function getNews($start_id, $limit, $state) {
     global $conn;
-    $stmt = $conn->prepare("SELECT id, title, synopsis, body, journalist_id
-                            FROM news
-                            WHERE state = ? AND id >= ? LIMIT ?;
+    $stmt = $conn->prepare("SELECT news.id, title, synopsis, body, journalist_id, name as journalist, ncomments
+                            FROM news join users on (news.journalist_id = users.id)
+                            WHERE state = ? AND news.id >= ? LIMIT ?;
     ");
     $stmt->execute(array($state, $start_id, $limit));
 
