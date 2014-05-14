@@ -15,5 +15,5 @@ $smarty->assign("submittednews", $submittednews);
 $smarty->assign("dates", $dates);
 
 
-$smarty->display("admin/approvalboard.tpl");
+$smarty->display("news/approvalboard.tpl");
 ?>

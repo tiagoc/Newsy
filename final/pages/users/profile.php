@@ -1,5 +1,5 @@
 <?php
 include_once '../../config/init.php';
 
-$smarty->display("admin/manageusers.tpl");
+$smarty->display("users/profile.tpl");
 ?>
