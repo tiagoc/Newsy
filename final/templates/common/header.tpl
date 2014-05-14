@@ -37,7 +37,7 @@
         <div class="row">
             <div class="small-12 columns">
                 <span class="left">
-                    <h1>Newsy <small>Fresh news. Your way.</small></h1>
+                    <a href="{$BASE_URL}"><h1>Newsy <small>Fresh news. Your way.</small></h1></a>
                 </span>
 
                 <span class="right">  
