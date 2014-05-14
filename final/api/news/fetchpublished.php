@@ -12,7 +12,7 @@ if ($id) {
     $news = getArticle($id);
 } else {
     if ($query) {
-        $news = getPublishedNewsByQuery($query);
+        $news = getPublishedNewsByQuery($query, $start, $n);
     } else {
         if ($start && $n) {
             $news = getNews($start, $n, "published");
