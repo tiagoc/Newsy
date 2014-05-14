@@ -5,8 +5,8 @@ include_once($BASE_DIR . 'database/news.php');
 
 $id = $_GET['id'];
 $query = $_GET['q'];
-$start = $_GET['start'];
-$n = $_GET['n'];
+$start = $_GET['start']?: 1;
+$n = $_GET['n']?: 10;
 
 if ($id) {
     $news = getArticle($id);
@@ -15,9 +15,9 @@ if ($id) {
         $news = getPublishedNewsByQuery($query);
     } else {
         if ($start && $n) {
-            $news = getNews($start, $limit, "published");
+            $news = getNews($start, $n, "published");
         } else {
-            $news = getAllPublishedNews();
+            $news = getNews($start, $n, "published");
         }
     }
 }

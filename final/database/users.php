@@ -40,7 +40,7 @@ function getUserRole($email) {
     $stmt->execute(array($email));
 
     $return = $stmt->fetch();
-    return $return['email'];
+    return $return['role'];
 }
 
 function doesUserExists($email) {

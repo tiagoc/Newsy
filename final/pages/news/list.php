@@ -3,8 +3,8 @@
 include_once '../../config/init.php';
 include_once '../../database/news.php';
 
-$start = $_GET['start']? : 1;
-$n = $_GET['n']? : 10;
+$start = $_GET['start']? $_GET['start'] : 1;
+$n = $_GET['n']? $_GET['n'] : 10;
 
 $news = json_decode(file_get_contents($BASE_URL."api/news/fetchpublished.php?start=$start&n=$n"),true);
 
