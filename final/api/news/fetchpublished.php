@@ -5,8 +5,8 @@ include_once($BASE_DIR . 'database/news.php');
 
 $id = $_GET['id'];
 $query = $_GET['q'];
-$start = $_GET['start']?: 1;
-$n = $_GET['n']?: 10;
+$start = $_GET['start']?$_GET['start']: 1;
+$n = $_GET['n']?$_GET['n']: 10;
 
 if ($id) {
     $news = getArticle($id);
