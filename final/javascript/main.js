@@ -1,10 +1,13 @@
 $(document).ready(function() {
-  initMessageClosers();
+    initMessageClosers();
+
+    $('.datepicker-simple').fdatepicker({
+        format: 'mm-dd-yyyy'
+    });
 });
 
 function initMessageClosers() {
-  $('.close').click(function() {
-    $(this).parent().fadeOut();
-  });
+    $('.close').click(function() {
+        $(this).parent().fadeOut();
+    });
 }
-

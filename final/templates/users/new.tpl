@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="large-4 columns">
                             <label for="birthday"><b>Birthday</b></label>
-                            <input type="date" name="birthday"/>
+                            <input class="datepicker-simple" type="date" name="birthday"/>
                         </div>                    
                         <div class="large-4 columns">
                             <label for="phone"><b>Phone</b></label>

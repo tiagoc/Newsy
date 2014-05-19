@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="{$BASE_URL}css/globalrules.css" />
         <link rel="stylesheet" href="{$BASE_URL}css/custom.css" />
         <link rel="stylesheet" href="{$BASE_URL}css/responsive-tables.css" />
+        <link rel="stylesheet" href="{$BASE_URL}css/foundation-datepicker.css" />
 
         <script src="{$BASE_URL}javascript/vendor/modernizr.js"></script>
         <script src="{$BASE_URL}javascript/jquery.min.js"></script>
@@ -21,12 +22,9 @@
         <script src="{$BASE_URL}javascript/foundation/foundation.dropdown.js"></script>
         <script src="{$BASE_URL}javascript/Chart.min.js"></script>
         <script src="{$BASE_URL}javascript/responsive-tables.js"></script>
+        <script src="{$BASE_URL}javascript/foundation-datepicker.js"></script>
         <script src="{$BASE_URL}javascript/main.js"></script>
         <script src="{$BASE_URL}javascript/news.js"></script>
-
-        <script>
-
-        </script>
     </head>
 
 

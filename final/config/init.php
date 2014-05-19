@@ -1,7 +1,7 @@
 <?php
 
 session_set_cookie_params(3600, '/~lbaw1336/final/');
-//session_set_cookie_params(3600, '/Newsy/final/');
+//session_set_cookie_params(3600, '/~ei10014/final/');
 session_start();
 
 $BASE_DIR = '/opt/lbaw/lbaw1336/public_html/final/';
@@ -9,8 +9,8 @@ $BASE_URL = 'http://gnomo.fe.up.pt/~lbaw1336/final/';
 
 $conn = new PDO('pgsql:host=vdbm.fe.up.pt;dbname=lbaw1336', 'lbaw1336', 'sK264hg6');
 
-//$BASE_DIR = '/srv/http/Newsy/final/';
-//$BASE_URL = 'http://localhost/Newsy/final/';
+//$BASE_DIR = '/usr/users2/mieic2010/ei10014/public_html/Newsy/final/';
+//$BASE_URL = 'http://gnomo.fe.up.pt/~ei10014/Newsy/final/';
 
 //$conn = new PDO('pgsql:host=localhost;dbname=lbaw1336', 'lbaw1336', 'sK264hg6');
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
