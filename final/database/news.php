@@ -83,8 +83,6 @@ function submitExistingNews($article_id) {
 function saveDraft($title, $synopsis, $body, $categories) {
     global $conn;
 
-    insertCategories($categories);
-
     /* insert non-existent categories */
     insertCategories($categories);
 
@@ -99,12 +97,14 @@ function saveDraft($title, $synopsis, $body, $categories) {
 
     /* associate article to categories */
     $id = $id_array['id'];
-    associateCategoriesNews($categories, $news_id);
+    associateCategoriesNews($categories, $id);
 }
 
-function saveExistingNews($article_id) {
+function saveExistingNews($article_id, $title, $synopsis, $body, $categories) {
     global $conn;
-
+    
+    /* TODO: what about value update? */
+    
     $stmt = $conn->prepare("INSERT INTO drafts VALUES(?,DEFAULT);");
     return $stmt->execute(array($article_id));
 }
