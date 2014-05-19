@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2014-05-19 14:50:52
+<?php /* Smarty version Smarty-3.1.15, created on 2014-05-19 15:04:57
          compiled from "/usr/users2/mieic2010/ei10014/public_html/Newsy/final/templates/users/new.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:370145378537a01485a6b37-87821923%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '886f4b25517246a2bc6efaf377a50a4b65d15aa3' => 
     array (
       0 => '/usr/users2/mieic2010/ei10014/public_html/Newsy/final/templates/users/new.tpl',
-      1 => 1400507448,
+      1 => 1400507471,
       2 => 'file',
     ),
   ),
@@ -70,7 +70,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <div class="row">
                         <div class="large-4 columns">
                             <label for="birthday"><b>Birthday</b></label>
-                            <input class="datepicker-none" type="date" name="birthday"/>
+                            <input class="datepicker-simple" type="date" name="birthday"/>
                         </div>                    
                         <div class="large-4 columns">
                             <label for="phone"><b>Phone</b></label>

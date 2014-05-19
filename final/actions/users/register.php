@@ -12,7 +12,7 @@ if (!$_POST['password']) {
 $birthday = $_POST['birthday'];
 $email = $_POST['email'];
 $sex = $_POST['gender'];
-$name = strip_tags($_POST['fname']) . strip_tags($_POST['lname']);
+$name = strip_tags($_POST['fname']) .' '. strip_tags($_POST['lname']);
 $password = $_POST['password'];
 $phone = $_POST['phone'];
 $facebook = $_POST['facebook'];
