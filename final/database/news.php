@@ -207,26 +207,26 @@ function getAllRejects() {
     return $stmt->fetchAll();
 }
 
-function getNewsByCategory($category, $start, $n) {
+function getNewsByCategory($category, $start, $n, $state) {
     global $conn;
 
     $stmt = $conn->prepare("SELECT news.id, title, synopsis, body, journalist_id
-                            FROM news join categorynews on news.id = categorynews.news_id join categories on categorynews.category_id = categories.id WHERE state = 'published' 
-                            AND news.id >= ? LIMIT ?;
+                            FROM news join categorynews on news.id = categorynews.news_id join categories on categorynews.category_id = categories.id WHERE state = ? 
+                            AND name = ? AND news.id >= ? LIMIT ?;
     ");
-    $stmt->execute(array($category, $start, $n));
+    $stmt->execute(array($state, $category, $start, $n));
 
     return $stmt->fetchAll();
 }
 
-function getPublishedNewsByQuery($query, $start, $n) {
+function getNewsByQuery($query, $start, $n, $state) {
     global $conn;
 
     $stmt = $conn->prepare("SELECT id, title, synopsis, body, journalist_id
-                            FROM news WHERE state = 'published' AND (title LIKE ? OR synopsis LIKE ?)
+                            FROM news WHERE state = ? AND (title LIKE ? OR synopsis LIKE ?)
                             AND news.id >= ? LIMIT ?;
     ");
-    $stmt->execute(array('%' . $query . '%', '%' . $query . '%', $start, $n));
+    $stmt->execute(array($state, '%' . $query . '%', '%' . $query . '%', $start, $n));
 
     return $stmt->fetchAll();
 }

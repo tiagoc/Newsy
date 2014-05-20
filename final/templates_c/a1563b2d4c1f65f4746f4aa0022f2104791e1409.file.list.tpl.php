@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2014-05-19 14:03:18
+<?php /* Smarty version Smarty-3.1.15, created on 2014-05-20 15:11:37
          compiled from "/usr/users2/mieic2010/ei10014/public_html/Newsy/final/templates/news/list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1124674766537a011605d6d9-87252855%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a1563b2d4c1f65f4746f4aa0022f2104791e1409' => 
     array (
       0 => '/usr/users2/mieic2010/ei10014/public_html/Newsy/final/templates/news/list.tpl',
-      1 => 1400229670,
+      1 => 1400595093,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_537a0116187125_03273298',
   'variables' => 
   array (
     'news' => 0,
     'article' => 0,
+    'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_537a0116187125_03273298',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_537a0116187125_03273298')) {function content_537a0116187125_03273298($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
@@ -41,7 +42,9 @@ $_smarty_tpl->tpl_vars['article']->_loop = true;
             <article id="article-<?php echo $_smarty_tpl->tpl_vars['article']->value['id'];?>
 ">
 
-                <h3><a href="#"><?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
+                <h3><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/news/view.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
 </a></h3>
                 <h4><small>Written by <a href="#"><?php echo $_smarty_tpl->tpl_vars['article']->value['journalist'];?>
 </a> on August 12, 2012.</small></h4>

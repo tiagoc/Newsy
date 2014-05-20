@@ -37,21 +37,18 @@
                         });
                     </script>
                     <i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i></div> 
-            <p class="text-right"><i class="fi-comment"></i> 0 comments</p> 
+            <p class="text-right"><i class="fi-comment"></i> {$article.ncomments}</p> 
         </article>
 
 
         <div id="comments">
 
-            <div class="panel radius">
-                <h5><small><div class="comment-username">José Miranda</div><div class="comment-datetime">11/03/2014   22:15</div><button type="button" class="comment-delete">Delete</button><button type="button" class="comment-edit">Edit</button></small></h5>
-                <p>This is some great news!</p>
-            </div>
-
-            <div class="panel radius">
-                <h5><small><div class="comment-username">Roger Dickinson</div><div class="comment-datetime">11/03/2014   22:30</div><button type="button" class="comment-delete">Delete</button><button type="button" class="comment-edit">Edit</button></small></h5>
-                <p>I fondly agree with Miranda!</p>
-            </div>
+            {foreach $comments as $comment}
+                <div id="comment-{$comment.id}" class="panel radius">
+                    <h5><small><div class="comment-username">{$comment.name}</div><div class="comment-datetime">{$comment.published_at}</div><button type="button" class="comment-delete">Delete</button><button type="button" class="comment-edit">Edit</button></small></h5>
+                    <p>{$comment.content}</p>
+                </div>
+            {/foreach}
 
             <textarea name="body"></textarea>
 

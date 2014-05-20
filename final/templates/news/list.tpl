@@ -9,7 +9,7 @@
         {foreach $news as $article}
             <article id="article-{$article.id}">
 
-                <h3><a href="#">{$article.title}</a></h3>
+                <h3><a href="{$BASE_URL}pages/news/view.php?id={$article.id}">{$article.title}</a></h3>
                 <h4><small>Written by <a href="#">{$article.journalist}</a> on August 12, 2012.</small></h4>
 
                 <div class="row">
