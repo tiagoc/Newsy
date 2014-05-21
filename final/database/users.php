@@ -34,6 +34,15 @@ function getUserID($email) {
     return $return['id'];
 }
 
+function getUser($id) {
+    global $conn;
+    $stmt = $conn->prepare("SELECT * from users where id = ?;");
+    $stmt->execute(array($id));
+
+    return $stmt->fetch();
+}
+
+
 function getUserRole($email) {
     global $conn;
     $stmt = $conn->prepare("SELECT role from users where email = ?;");

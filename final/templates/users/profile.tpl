@@ -5,29 +5,25 @@
 
             <div class="row">
                 <div class="small-12 columns">
-                    <h2 class="left"><i class="fi-torso"></i><div id="username">John Smith</div></h2>                
+                    <h2 class="left"><i class="fi-torso"></i><div id="username">{$user.name}</div></h2>                
                     <h2 class="right"><a href="#"><i class="fi-pencil"></i></a></h2>
                 </div>
             </div>
 
             <div class="row">
-                <div class="small-4 columns"><i class="fi-mail"></i><div id="email"><big>Email</big></div></div><div class="small-8 columns">nofway@random.com</div>
+                <div class="small-4 columns"><i class="fi-mail"></i><div id="email"><big>Email</big></div></div><div class="small-8 columns">{$user.email}</div>
             </div>
             <br/>
             <div class="row">
-                <div class="small-4 columns"><i class="fi-male-female"></i><div id="gender"><big>Gender</big></div></div> <div class="small-8 columns">Male</div>
+                <div class="small-4 columns"><i class="fi-male-female"></i><div id="gender"><big>Gender</big></div></div> <div class="small-8 columns">{$user.gender}</div>
             </div>
             <br/>
             <div class="row">
-                <div class="small-4 columns"><i class="fi-calendar"></i><div id="birthday"><big>Birthday</big></div></div> <div class="small-8 columns">31/12/1994</div>
+                <div class="small-4 columns"><i class="fi-calendar"></i><div id="birthday"><big>Birthday</big></div></div> <div class="small-8 columns">{$user.birthday}</div>
             </div>
             <br/>
             <div class="row">
-                <div class="small-4 columns"><i class="fi-home"></i><div id="address"><big>Address</big></div></div> <div class="small-8 columns">Random Street, nr 3, Silicon Valley</div>
-            </div>
-            <br/>
-            <div class="row">
-                <div class="small-4 columns"><i class="fi-clock"></i><div id="regdate"><big>Registered Since</big></div></div> <div class="small-8 columns">10/03/2014</div>
+                <div class="small-4 columns"><i class="fi-clock"></i><div id="regdate"><big>Registered Since</big></div></div> <div class="small-8 columns">{$user.registered_since}</div>
             </div>
             <br/><br/>
         </div>
