@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2014-05-21 19:21:53
+<?php /* Smarty version Smarty-3.1.15, created on 2014-05-21 23:22:06
          compiled from "/usr/users2/mieic2010/ei10014/public_html/Newsy/final/templates/news/list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1124674766537a011605d6d9-87252855%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a1563b2d4c1f65f4746f4aa0022f2104791e1409' => 
     array (
       0 => '/usr/users2/mieic2010/ei10014/public_html/Newsy/final/templates/news/list.tpl',
-      1 => 1400696511,
+      1 => 1400710886,
       2 => 'file',
     ),
   ),
@@ -50,7 +50,8 @@ pages/news/view.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['id']
                 <h4><small>Written by <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['journalist_id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['article']->value['journalist'];?>
-</a> on August 12, 2012.</small></h4>
+</a> on <?php echo $_smarty_tpl->tpl_vars['article']->value['dates']['publish']['published_at'];?>
+.</small></h4>
 
                 <div class="row">
                     <div class="large-12 columns">

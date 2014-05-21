@@ -10,7 +10,7 @@
             <article id="article-{$article.id}">
 
                 <h3><a href="{$BASE_URL}pages/news/view.php?id={$article.id}">{$article.title}</a></h3>
-                <h4><small>Written by <a href="{$BASE_URL}pages/users/profile.php?id={$article.journalist_id}">{$article.journalist}</a> on August 12, 2012.</small></h4>
+                <h4><small>Written by <a href="{$BASE_URL}pages/users/profile.php?id={$article.journalist_id}">{$article.journalist}</a> on {$article.dates.publish.published_at}.</small></h4>
 
                 <div class="row">
                     <div class="large-12 columns">

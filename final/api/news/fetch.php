@@ -4,15 +4,17 @@ include_once('../../config/init.php');
 include_once($BASE_DIR . 'database/news.php');
 
 $state = $_GET['state'] ? $_GET['state'] : 'published';
-$id    = $_GET['id'];
+$id = $_GET['id'];
 $query = $_GET['q'];
 $start = $_GET['start'] ? $_GET['start'] : 1;
-$n     = $_GET['n'] ? $_GET['n'] : 10;
+$n = $_GET['n'] ? $_GET['n'] : 10;
 
 $news = array();
 
 if ($id) {
     $news = getArticle($id);
+    $news ? $news['categories'] = getCategories($news['id']) : null;
+    $news['dates'] = array("draft" => getLastDraftDate($news['id']), "publish" => getLastPublishDate($news['id']), "submission" => getLastSubmissionDate($news['id']), "reject" => getLastRejectDate($news['id']));
 } else {
     if ($query) {
         $news = getNewsByQuery($query, $start, $n, $state);
@@ -26,8 +28,7 @@ if ($id) {
 
     foreach ($news as &$article) {
         $article['categories'] = getCategories($article['id']);
+        $article['dates'] = array("draft" => getLastDraftDate($article['id']), "publish" => getLastPublishDate($article['id']), "submission" => getLastSubmissionDate($article['id']), "reject" => getLastRejectDate($article['id']));
     }
 }
-
-$news? $news['categories'] = getCategories($news['id']) : null;
 echo json_encode($news);

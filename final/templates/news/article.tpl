@@ -9,7 +9,7 @@
 
         <article>
             <h3><a href="#">{$article.title}</a><i class="fi-star favourite-star-disabled" onclick="$('.favourite-star-disabled, .favourite-star-enabled').toggleClass('favourite-star-disabled').toggleClass('favourite-star-enabled');"></i></h3>
-            <h4><small>Written by <a href="#">{$article.journalist}</a> on August 12, 2012.</small></h4>
+            <h4><small>Written by <a href="#">{$article.journalist}</a> on {$article.dates.publish.published_at}.</small></h4>
             <p></p>
 
             <div class="row">
@@ -29,7 +29,16 @@
                 </div>
             </div>
 
-            <div id="category"><i class="fi-price-tag"></i> Categories</div> <p>Politics, Food </p>
+            <div id="category"><i class="fi-price-tag"></i> Categories</div> <p>
+                    {foreach $article.categories as $c name=catlist}
+                        {$c.name}
+                        {if not $smarty.foreach.catlist.last}
+                            , 
+                        {/if}
+                    {foreachelse}
+                        - none -
+                    {/foreach}
+                </p>
             <div id="rating">Rating: <a id="stars">
                     <script type="text/javascript">
                         $(document).ready(function() {

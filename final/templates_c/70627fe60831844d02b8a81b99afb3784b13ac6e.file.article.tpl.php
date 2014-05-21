@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2014-05-20 16:57:38
+<?php /* Smarty version Smarty-3.1.15, created on 2014-05-21 23:31:15
          compiled from "/usr/users2/mieic2010/ei10014/public_html/Newsy/final/templates/news/article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1708530214537b629b4f6f94-08095445%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '70627fe60831844d02b8a81b99afb3784b13ac6e' => 
     array (
       0 => '/usr/users2/mieic2010/ei10014/public_html/Newsy/final/templates/news/article.tpl',
-      1 => 1400601455,
+      1 => 1400711460,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'article' => 0,
+    'c' => 0,
     'comments' => 0,
     'comment' => 0,
   ),
@@ -39,7 +40,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <h3><a href="#"><?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
 </a><i class="fi-star favourite-star-disabled" onclick="$('.favourite-star-disabled, .favourite-star-enabled').toggleClass('favourite-star-disabled').toggleClass('favourite-star-enabled');"></i></h3>
             <h4><small>Written by <a href="#"><?php echo $_smarty_tpl->tpl_vars['article']->value['journalist'];?>
-</a> on August 12, 2012.</small></h4>
+</a> on <?php echo $_smarty_tpl->tpl_vars['article']->value['dates']['publish']['published_at'];?>
+.</small></h4>
             <p></p>
 
             <div class="row">
@@ -61,7 +63,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </div>
             </div>
 
-            <div id="category"><i class="fi-price-tag"></i> Categories</div> <p>Politics, Food </p>
+            <div id="category"><i class="fi-price-tag"></i> Categories</div> <p>
+                    <?php  $_smarty_tpl->tpl_vars['c'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['c']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['article']->value['categories']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['c']->total= $_smarty_tpl->_count($_from);
+ $_smarty_tpl->tpl_vars['c']->iteration=0;
+foreach ($_from as $_smarty_tpl->tpl_vars['c']->key => $_smarty_tpl->tpl_vars['c']->value) {
+$_smarty_tpl->tpl_vars['c']->_loop = true;
+ $_smarty_tpl->tpl_vars['c']->iteration++;
+ $_smarty_tpl->tpl_vars['c']->last = $_smarty_tpl->tpl_vars['c']->iteration === $_smarty_tpl->tpl_vars['c']->total;
+ $_smarty_tpl->tpl_vars['smarty']->value['foreach']['catlist']['last'] = $_smarty_tpl->tpl_vars['c']->last;
+?>
+                        <?php echo $_smarty_tpl->tpl_vars['c']->value['name'];?>
+
+                        <?php if (!$_smarty_tpl->getVariable('smarty')->value['foreach']['catlist']['last']) {?>
+                            , 
+                        <?php }?>
+                    <?php }
+if (!$_smarty_tpl->tpl_vars['c']->_loop) {
+?>
+                        - none -
+                    <?php } ?>
+                </p>
             <div id="rating">Rating: <a id="stars">
                     <script type="text/javascript">
                         $(document).ready(function() {
