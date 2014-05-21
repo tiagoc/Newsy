@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2014-05-20 15:11:37
+<?php /* Smarty version Smarty-3.1.15, created on 2014-05-21 19:21:53
          compiled from "/usr/users2/mieic2010/ei10014/public_html/Newsy/final/templates/news/list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1124674766537a011605d6d9-87252855%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a1563b2d4c1f65f4746f4aa0022f2104791e1409' => 
     array (
       0 => '/usr/users2/mieic2010/ei10014/public_html/Newsy/final/templates/news/list.tpl',
-      1 => 1400595093,
+      1 => 1400696511,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'news' => 0,
     'article' => 0,
     'BASE_URL' => 0,
+    'c' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -46,7 +47,9 @@ $_smarty_tpl->tpl_vars['article']->_loop = true;
 pages/news/view.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
 </a></h3>
-                <h4><small>Written by <a href="#"><?php echo $_smarty_tpl->tpl_vars['article']->value['journalist'];?>
+                <h4><small>Written by <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['journalist_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['article']->value['journalist'];?>
 </a> on August 12, 2012.</small></h4>
 
                 <div class="row">
@@ -66,7 +69,28 @@ pages/news/view.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['id']
                     </div>
                 </div>                 
 
-                <div id="category"><i class="fi-price-tag"></i> Categories</div> <p>Politics, Food </p>
+                <div id="category"><i class="fi-price-tag"></i> Categories</div> <p>
+                    <?php  $_smarty_tpl->tpl_vars['c'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['c']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['article']->value['categories']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['c']->total= $_smarty_tpl->_count($_from);
+ $_smarty_tpl->tpl_vars['c']->iteration=0;
+foreach ($_from as $_smarty_tpl->tpl_vars['c']->key => $_smarty_tpl->tpl_vars['c']->value) {
+$_smarty_tpl->tpl_vars['c']->_loop = true;
+ $_smarty_tpl->tpl_vars['c']->iteration++;
+ $_smarty_tpl->tpl_vars['c']->last = $_smarty_tpl->tpl_vars['c']->iteration === $_smarty_tpl->tpl_vars['c']->total;
+ $_smarty_tpl->tpl_vars['smarty']->value['foreach']['catlist']['last'] = $_smarty_tpl->tpl_vars['c']->last;
+?>
+                        <?php echo $_smarty_tpl->tpl_vars['c']->value['name'];?>
+
+                        <?php if (!$_smarty_tpl->getVariable('smarty')->value['foreach']['catlist']['last']) {?>
+                            , 
+                        <?php }?>
+                    <?php }
+if (!$_smarty_tpl->tpl_vars['c']->_loop) {
+?>
+                        - none -
+                    <?php } ?>
+                </p>
                 <p class="text-right"><i class="fi-comment"></i> <?php echo $_smarty_tpl->tpl_vars['article']->value['ncomments'];?>
 </p> 
             </article>
