@@ -14,7 +14,7 @@ function getNews($start_id, $limit, $state) {
 function getArticle($article_id) {
     global $conn;
     $stmt = $conn->prepare("SELECT news.id, title, synopsis, body, journalist_id, name as journalist, ncomments
-                            FROM news join users on (news.journalist_id = users.id) WHERE state = 'published' AND                            news.id = ?;
+                            FROM news join users on (news.journalist_id = users.id) WHERE state = 'published' AND news.id = ?;
     ");
     $stmt->execute(array($article_id));
 
@@ -61,16 +61,16 @@ function submitNews($title, $synopsis, $body, $categories) {
 
     /* insert article per-say */
     $conn->query("BEGIN;");
-    $stmt = $conn->prepare("INSERT INTO news VALUES(DEFAULT, ?, ?, ?, DEFAULT, DEFAULT, 'submitted', DEFAULT ,$_SESSION[id]);");
+    $stmt = $conn->prepare("INSERT INTO news VALUES(DEFAULT, ?, ?, ?, DEFAULT, DEFAULT, 'submitted', DEFAULT , $_SESSION[id]);");
     $stmt->execute(array($title, $synopsis, $body));
     $stmt = $conn->prepare("SELECT id from news order by id desc limit 1");
     $stmt->execute();
     $id_array = $stmt->fetch();
     $conn->query("COMMIT;");
-
+    
     /* associate article to categories */
     $id = $id_array['id'];
-    associateCategoriesNews($categories, $news_id);
+    associateCategoriesNews($categories, $id);
 }
 
 function submitExistingNews($article_id) {
