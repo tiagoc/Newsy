@@ -26,6 +26,7 @@ function rejectNews($article_id) {
 
     $stmt = $conn->prepare("INSERT INTO rejects VALUES(?,DEFAULT);");
     return $stmt->execute(array($article_id));
+    
 }
 
 function publishNews($article_id) {
@@ -237,5 +238,14 @@ function getComments($news_id) {
     $stmt = $conn->prepare("SELECT comments.id, content, published_at, name FROM comments join users on (comments.user_id = users.id) WHERE news_id = ?;");
     $stmt->execute(array($news_id));
 
+    return $stmt->fetchAll();
+}
+
+function getCategories($news_id) {
+    global $conn;
+    
+    $stmt = $conn->prepare("SELECT categories.id, name FROM news join categoriesnews on (news.id = news_id) join categories on (categories.id = category_id) WHERE news_id = ?;");
+    $stmt->execute(array($news_id));
+    
     return $stmt->fetchAll();
 }
