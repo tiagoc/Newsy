@@ -1,4 +1,5 @@
 {include 'common/header.tpl'}
+
 <div class="row">
     <div class="large-9 columns">
         <div class="row">
@@ -11,19 +12,27 @@
             </div>
 
             <div class="row">
-                <div class="small-4 columns"><i class="fi-mail"></i><div id="email"><big>Email</big></div></div><div class="small-8 columns">{$user.email}</div>
+                <div class="small-4 columns"><i class="fi-mail"></i><div id="email">
+                        <big>Email</big></div></div>
+                <div class="small-8 columns">{$user.email}</div>
             </div>
             <br/>
             <div class="row">
-                <div class="small-4 columns"><i class="fi-male-female"></i><div id="gender"><big>Gender</big></div></div> <div class="small-8 columns">{$user.gender}</div>
+                <div class="small-4 columns"><i class="fi-male-female"></i>
+                    <div id="gender"><big>Gender</big></div></div> 
+                <div class="small-8 columns">{$user.gender}</div>
             </div>
             <br/>
             <div class="row">
-                <div class="small-4 columns"><i class="fi-calendar"></i><div id="birthday"><big>Birthday</big></div></div> <div class="small-8 columns">{$user.birthday}</div>
+                <div class="small-4 columns"><i class="fi-calendar"></i><div id="birthday">
+                        <big>Birthday</big></div></div> 
+                <div class="small-8 columns">{$user.birthday}</div>
             </div>
             <br/>
             <div class="row">
-                <div class="small-4 columns"><i class="fi-clock"></i><div id="regdate"><big>Registered Since</big></div></div> <div class="small-8 columns">{$user.registered_since}</div>
+                <div class="small-4 columns"><i class="fi-clock"></i>
+                    <div id="regdate"><big>Registered Since</big></div></div> 
+                <div class="small-8 columns">{$user.registered_since}</div>
             </div>
             <br/><br/>
         </div>
@@ -31,7 +40,7 @@
 
     <!-- Sidebar -->
     <div class="large-3 columns">        
-        <a href=""><img id="userimage" src="http://placehold.it/400x280"></a>
+        <a href=""><img id="userimage" src=" {$gravatar_link} "></a>
         <a href="#"><big><b><i class="fi-social-youtube small-3 small-centered columns"></i></b></big></a>
         <a href="#"><big><b><i class="fi-social-facebook small-3 small-centered columns"></i></b></big></a>
         <a href="#"><big><b><i class="fi-social-google-plus small-3 small-centered columns"></i></b></big></a>
