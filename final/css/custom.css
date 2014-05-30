@@ -185,10 +185,15 @@ a[data-dropdown="user-menu"]{
     font-weight: bold;
 }
 
+
 #birthday{
     display: inline;
     padding-left: 0.7em;
     font-weight: bold;
+}
+
+#gender-data .small-8{
+    text-transform: capitalize;
 }
 
 #address{

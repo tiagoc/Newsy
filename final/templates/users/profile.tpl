@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="small-4 columns"><i class="fi-male-female"></i>
                     <div id="gender"><big>Gender</big></div></div> 
-                <div class="small-8 columns">{$user.gender}</div>
+                <span id="gender-data"><div class="small-8 columns">{$user.gender}</div></span>
             </div>
             <br/>
             <div class="row">
