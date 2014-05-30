@@ -26,13 +26,13 @@
             <div class="row">
                 <div class="small-4 columns"><i class="fi-calendar"></i><div id="birthday">
                         <big>Birthday</big></div></div> 
-                <div class="small-8 columns">{$user.birthday}</div>
+                <div class="small-8 columns">{$birthday_fixed}</div>
             </div>
             <br/>
             <div class="row">
                 <div class="small-4 columns"><i class="fi-clock"></i>
                     <div id="regdate"><big>Registered Since</big></div></div> 
-                <div class="small-8 columns">{$user.registered_since}</div>
+                <div class="small-8 columns">{$registered_since_fixed}</div>
             </div>
             <br/><br/>
         </div>
@@ -40,11 +40,11 @@
 
     <!-- Sidebar -->
     <div class="large-3 columns">        
-        <a href=""><img id="userimage" src=" {$gravatar_link} "></a>
-        <a href="#"><big><b><i class="fi-social-youtube small-3 small-centered columns"></i></b></big></a>
-        <a href="#"><big><b><i class="fi-social-facebook small-3 small-centered columns"></i></b></big></a>
-        <a href="#"><big><b><i class="fi-social-google-plus small-3 small-centered columns"></i></b></big></a>
-        <a href="#"><big><b><i class="fi-social-linkedin small-3 small-centered columns"></i></b></big></a>
+        <a href="{$gravatar_link}"><img id="userimage" src=" {$gravatar_link} "></a>
+        <a href="{$user.youtube}"><big><b><i class="fi-social-youtube small-3 small-centered columns"></i></b></big></a>
+        <a href="{$user.facebook}"><big><b><i class="fi-social-facebook small-3 small-centered columns"></i></b></big></a>
+        <a href="{$user.googleplus}"><big><b><i class="fi-social-google-plus small-3 small-centered columns"></i></b></big></a>
+        <a href="{$user.linkedin}"><big><b><i class="fi-social-linkedin small-3 small-centered columns"></i></b></big></a>
     </div>
     <!-- End Sidebar -->
 </div>

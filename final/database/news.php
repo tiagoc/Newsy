@@ -235,7 +235,7 @@ function getNewsByQuery($query, $start, $n, $state) {
 function getComments($news_id) {
     global $conn;
 
-    $stmt = $conn->prepare("SELECT comments.id, content, published_at, name FROM comments join users on (comments.user_id = users.id) WHERE news_id = ?;");
+    $stmt = $conn->prepare("SELECT comments.id, content, published_at, name, user_id FROM comments join users on (comments.user_id = users.id) WHERE news_id = ?;");
     $stmt->execute(array($news_id));
 
     return $stmt->fetchAll();

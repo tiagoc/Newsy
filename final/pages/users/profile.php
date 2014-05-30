@@ -10,5 +10,9 @@ $smarty->assign("user", $user);
 $email_gravatar=md5($user['email']);
 $smarty->assign("gravatar_link", "http://www.gravatar.com/avatar/$email_gravatar?s=280;");
 
+
+$smarty->assign("birthday_fixed", date('d-m-Y', strtotime($user['birthday'])));
+$smarty->assign("registered_since_fixed", date('d-m-Y', strtotime($user['registered_since'])));
+
 $smarty->display("users/profile.tpl");
 ?>

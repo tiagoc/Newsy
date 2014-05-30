@@ -69,3 +69,12 @@ function getUsers($start_id, $limit) {
     
     return $stmt->fetchAll();
 }
+
+function getFavourites($user_id) {
+    global $conn;
+    
+    $stmt = $conn->prepare("SELECT news_id FROM favourites WHERE user_id = ?;");
+    $stmt->execute(array($user_id));
+    
+    return $stmt->fetchAll();
+}
