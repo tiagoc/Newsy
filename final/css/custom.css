@@ -2,6 +2,21 @@ body {
     padding: 1em;
 }
 
+@media only screen and (max-width: 40em) { 
+
+    h1 {
+    position: relative;
+    margin-top: 2%;
+    font-size: 250%;
+    font-size-adjust: auto;
+    font-kerning: auto;
+    /*font-size: 50px;*/
+    font-family: 'Lobster', helvetica, arial;
+    }
+}
+   
+@media only screen and (min-width: 40.063em) and (max-width: 120.063em) { 
+
 h1 {
     position: relative;
     margin-top: 2%;
@@ -10,6 +25,7 @@ h1 {
     font-kerning: auto;
     /*font-size: 50px;*/
     font-family: 'Lobster', helvetica, arial;
+}
 }
 
 article h3 {
