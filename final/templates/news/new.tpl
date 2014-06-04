@@ -1,5 +1,6 @@
 {include 'common/header.tpl'}
-<form method="post" name="form">
+
+<form data-abide method="post" name="form">
     <div class="row">
         <div class="small-12 columns">
             <h1>Create New Article</h1>
@@ -7,26 +8,30 @@
             <form>
                 <div class="row">        
                     <div class="large-10 columns">
-                        <label for="title"><b>Title</b></label>
-                        <input type="text" name="title"/>
+                        <label for="title"><b>Title</b>  <small>required</small></label>
+                        <input type="text" name="title" required/>
+                        <small class="error">Title is required. Choose it carefully, this is your headline!</small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="large-10 columns">
-                        <label for="synopsis"><b>Synopsis</b></label>
-                        <textarea name="synopsis"></textarea>
+                        <label for="synopsis"><b>Synopsis</b>  <small>required</small></label>
+                        <textarea name="synopsis" required></textarea>
+                        <small class="error">Please insert a small synopsis of your article here.</small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="large-10 columns">
-                        <label for="body"><b>Body</b></label>
-                        <textarea name="body"></textarea>
+                        <label for="body"><b>Body</b>  <small>required</small></label>
+                        <textarea name="body" required></textarea>
+                        <small class="error">Mandatory field. This is the body of your article.</small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="large-10 columns">
-                        <label for="categories"><b>Categories</b></label>
-                        <input type="text" name="categories"/>
+                        <label for="categories"><b>Categories</b>  <small>required</small></label>
+                        <input type="text" name="categories" required/>
+                        <small class="error">Please insert at least one category.</small>
                     </div>
                 </div>
                 <div class="row">
