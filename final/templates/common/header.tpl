@@ -51,8 +51,8 @@
                         <div class="row">
                             <div class="small-8 small-centered columns">
                                 <h1>Login</h1>
-                                <input type="text" name="email" placeholder="email"/>                                
-                                <input type="password" name="password" placeholder="password"/>  
+                                <input type="text" name="email" placeholder="email" required/>                                
+                                <input type="password" name="password" placeholder="password" required/>  
                                 <input type="submit" value="Submit" class="right button tiny round"/>                                
                             </div>
                         </div>
