@@ -54,6 +54,24 @@ function associateCategoriesNews($categories, $news_id) {
     }
 }
 
+function insertImages($images) { 
+    global $conn;
+
+    foreach ($images as $c) {
+        $stmt = $conn->prepare("INSERT INTO images VALUES(DEFAULT, ?);");
+        $stmt->execute(array($c));
+    }
+}
+
+function associateImageNews($images, $news_id) {
+    global $conn;
+
+    foreach ($images as $c) {
+        $stmt = $conn->prepare("INSERT INTO imagesnews values ((SELECT id FROM images WHERE name = ?),?);");
+        $stmt->execute(array($c, $news_id));
+    }
+}
+
 function submitNews($title, $synopsis, $body, $categories) {
     global $conn;
 
@@ -81,11 +99,12 @@ function submitExistingNews($article_id) {
     return $stmt->execute(array($article_id));
 }
 
-function saveDraft($title, $synopsis, $body, $categories) {
+function saveDraft($title, $synopsis, $body, $categories, $images) {
     global $conn;
 
     /* insert non-existent categories */
     insertCategories($categories);
+    insertImages($images);
 
     /* insert article per-say */
     $conn->query("BEGIN;");
@@ -99,6 +118,7 @@ function saveDraft($title, $synopsis, $body, $categories) {
     /* associate article to categories */
     $id = $id_array['id'];
     associateCategoriesNews($categories, $id);
+    associateImageNews($images, $id);
 }
 
 function saveExistingNews($article_id, $title, $synopsis, $body, $categories) {

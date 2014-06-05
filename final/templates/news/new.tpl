@@ -36,8 +36,20 @@
                 </div>
                 <div class="row">
                     <div class="large-10 columns">
-                        <input type="submit" value= "Save" class="right button tiny round" onclick="this.form.action='{$BASE_URL}actions/news/save.php'"/>
-                        <input type="submit" value= "Submit" class="right button tiny round" onclick="this.form.action='{$BASE_URL}actions/news/submit.php'"/>
+                        <label for="categories"><b>Images</b></label>
+                        <form id="imageform" method="post" enctype="multipart/form-data" action='ajaxImageUpload.php' style="clear:both">
+                            <h1>Upload your images</h1> 
+                            <div id='imageloadstatus' style='display:none'><img src="{$BASE_URL}images/assets/loader.gif" alt="Uploading...."/></div>
+                            <div id='imageloadbutton'>
+                                <input type="file" name="photos[]" id="photoimg" multiple="true" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-10 columns">
+                        <input type="submit" value= "Save" class="right button tiny round" onclick="this.form.action = '{$BASE_URL}actions/news/save.php'"/>
+                        <input type="submit" value= "Submit" class="right button tiny round" onclick="this.form.action = '{$BASE_URL}actions/news/submit.php'"/>
                     </div>
                 </div>
             </form>    
