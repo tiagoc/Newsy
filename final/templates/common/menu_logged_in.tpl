@@ -7,7 +7,12 @@
     {if $ROLE && ($ROLE == 'journalist' || $ROLE == 'editor' || $ROLE == 'admin')}
         <li><a href="{$BASE_URL}pages/users/mynews.php"><i class="fi-results"></i>My Board</a></li>
     {/if}
-    <li><a href="{$BASE_URL}pages/users/profile.php"><i class="fi-torso"></i>My Profile</a></li>
+    {if $ROLE && ($ROLE == 'admin' || $ROLE == 'editor')}
+    <li><a href="{$BASE_URL}pages/users/journalistprofile.php"><i class="fi-torso"></i>My Profile</a></li>
+        {else}
+            <li><a href="{$BASE_URL}pages/users/profile.php"><i class="fi-torso"></i>My Profile</a></li>
+    {/if}
+        
     {if $ROLE && ($ROLE == 'admin' || $ROLE == 'editor')}
         <li><a href="{$BASE_URL}pages/news/approvalboard.php"><i class="fi-checkbox"></i>Approval Board</a></li>
     {/if}
