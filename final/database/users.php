@@ -87,3 +87,12 @@ function getUserComments($user_id) {
     
     return $stmt->fetchAll();
 }
+
+function getAllJournalistNews($user_id) {
+    global $conn;
+    $stmt = $conn->prepare("SELECT id, title, state FROM news
+                            WHERE journalist_id = ? ORDER BY id DESC;");
+    $stmt->execute(array($user_id));
+
+    return $stmt->fetchAll();
+}
