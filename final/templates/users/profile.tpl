@@ -57,18 +57,24 @@
     <div class="small-12 medium-6 large-6 columns">
         <h3 class="text-left">Favourite news</h3>
         <ul id="favouritesli">
-            <li><i class="fi-star"></i> <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
-            <li><i class="fi-star"></i> <a href="#">Mauris tristique eros orci, nec sodales nisi adipiscing malesuada</a></li>
-            <li><i class="fi-star"></i> <a href="#">Nullam vitae imperdiet justo, in pretium nibh</a></li>
+            
+            {foreach $user.favs as $fav}
+                <li><i class="fi-star"></i>
+                    <a href="../news/view.php?id={$fav.news_id}">{$fav.title}</a></li>
+            {/foreach}
+            
         </ul>
     </div>
 
     <div class="small-12 medium-6 large-6 columns">
         <h3 class="text-left">Last comments</h3>
         <ul id="commentsli">
-            <li><i class="fi-comment"></i><div class="comment">Duis sem lectus, sodales venenatis pulvinar sit amet, cursus at augue</div><a href="#">Nulla facilisi</a></li>
-            <li><i class="fi-comment"></i><div class="comment">Suspendisse vulputate cursus ornare</div><a href="#">Nam nec enim quis odio facilisis ullamcorper dapibus vel nisl</a></li>
-            <li><i class="fi-comment"></i><div class="comment">Interdum et malesuada fames ac ante ipsum primis in faucibus</div><a href="#">Sed sed pretium quam, eu tempor elit</a></li>
+                        
+            {foreach $user.comments as $comment}
+                <li><i class="fi-comment"></i><div class="comment">{$comment.content}</div>
+                    <a href="../news/view.php?id={$comment.news_id}">{$comment.title}</a></li>
+            {/foreach}
+            
         </ul>
     </div>
 </div>

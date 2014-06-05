@@ -2,7 +2,7 @@ body {
     padding: 1em;
 }
 
-@media only screen and (max-width: 40em) { 
+@media only screen and (max-width: 30em) { 
 
     h1 {
     position: relative;
@@ -12,10 +12,17 @@ body {
     font-kerning: auto;
     /*font-size: 50px;*/
     font-family: 'Lobster', helvetica, arial;
+    
     }
+    
+    h1 small{
+        visibility: hidden;
+        font-size: 0;
+    }
+    
 }
    
-@media only screen and (min-width: 40.063em) and (max-width: 120.063em) { 
+@media only screen and (min-width: 30em) and (max-width: 120.063em) { 
 
 h1 {
     position: relative;

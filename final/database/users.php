@@ -73,7 +73,16 @@ function getUsers($start_id, $limit) {
 function getFavourites($user_id) {
     global $conn;
     
-    $stmt = $conn->prepare("SELECT news_id FROM favourites WHERE user_id = ?;");
+    $stmt = $conn->prepare("SELECT * FROM favourites LEFT JOIN news on news.id=favourites.news_id WHERE user_id = ?;");
+    $stmt->execute(array($user_id));
+    
+    return $stmt->fetchAll();
+}
+
+function getUserComments($user_id) {
+    global $conn;
+    
+    $stmt = $conn->prepare("SELECT * FROM comments LEFT JOIN news on news.id=comments.news_id WHERE user_id = ?;");
     $stmt->execute(array($user_id));
     
     return $stmt->fetchAll();

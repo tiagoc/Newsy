@@ -9,6 +9,8 @@ $n = $_GET['n']?$_GET['n'] : 15;
 
 if ($id) {
     $users = getUser($id);
+    $users['comments'] = getUserComments($id);
+    $users['favs'] = getFavourites($id);
 } else {
     $users = getUsers($start, $n);
 }

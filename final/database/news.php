@@ -249,3 +249,12 @@ function getCategories($news_id) {
     
     return $stmt->fetchAll();
 }
+
+function getTitleById($news_id) {
+    global $conn;
+    
+    $stmt = $conn->prepare("SELECT title FROM news WHERE id = ?;");
+    $stmt->execute(array($news_id));
+    
+    return $stmt->fetch();
+}
