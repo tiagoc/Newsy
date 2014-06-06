@@ -1,4 +1,5 @@
 {include 'common/header.tpl'}
+
 <div class="row">
     <div class="small-12 columns">
         <h1>Approval Board</h1>
@@ -22,23 +23,24 @@
                                     <th width="50" class="app-rep-button" 
                                         onclick="if ($('.reprove-button').size() == 0)
                                                     $('.reprove-button, .publish-button').html('Reprove');
-                                                else
-                                                    $('.reprove-button, .publish-button').html('Publish');
-                                                                                    $('.reprove-button, .publish-button').toggleClass('publish-button').toggleClass('reprove-button');">Change Approval</th>
+                                                    else
+                                                        $('.reprove-button, .publish-button').html('Publish');
+                                                 
+                                            $('.reprove-button, .publish-button').toggleClass('publish-button').toggleClass('reprove-button');">Change Approval</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {foreach $submittednews as $article}
-                                <form action="{$BASE_URL}actions/news/publish.php" method='post'>
-                                    <tr id="draft-{$article-id}">                                        
-                                        <td><a href='{$BASE_URL}pages/news/view.php?article={$article.id}'>{$article.title}</a></td>
-                                        <td><a href="{$BASE_URL}pages/users/journalistprofile.php?id={$article.journalist_id}">{$article.name}</a></td>
+                                <form action="../actions/news/publish.php" method="post">
+                                    <tr id="draft-{$article.id}">                                        
+                                        <td><a href="../news/view.php?article={$article.id}">{$article.title}</a></td>
+                                        <td><a href="../users/journalistprofile.php?id={$article.journalist_id}">{$article.name}</a></td>
                                         <td><input type="submit" class="tiny button radious publish-button" value="Publish"/></td>
 
                                         <input type="hidden" name="id" value="{$article.id}"/>
                                     </tr>
                                 </form>
-                            {/foreach}
+                                {/foreach}
                             </tbody>
                         </table>
                     </div>
