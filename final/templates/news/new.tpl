@@ -36,7 +36,7 @@
                 </div>
                 <div class="row">
                     <div class="large-10 columns">
-                        <label for="categories"><b>Images</b></label>
+                        <label for="images"><b>Images</b></label>
                         <form id="imageform" method="post" enctype="multipart/form-data" action='ajaxImageUpload.php' style="clear:both">
                             <h1>Upload your images</h1> 
                             <div id='imageloadstatus' style='display:none'><img src="{$BASE_URL}images/assets/loader.gif" alt="Uploading...."/></div>
