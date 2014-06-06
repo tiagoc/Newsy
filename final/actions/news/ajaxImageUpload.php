@@ -36,7 +36,6 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
 
                 if (move_uploaded_file($_FILES['photos']['tmp_name'][$name], $newname)) {
                     ///////////////
-                    insertImages($filename);
                     //////////////
                 } else {
                     echo '<span class="imgList">You have exceeded the size limit! so moving unsuccessful! </span>';
