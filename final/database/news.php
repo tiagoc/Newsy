@@ -287,3 +287,12 @@ function getTitleById($news_id) {
     
     return $stmt->fetch();
 }
+
+function search($string) {
+    global $conn;
+    
+    $stmt = $conn->prepare("SELECT * FROM news WHERE title @@ plainto_tsquery(?);");
+    $stmt->execute(array($string));
+    
+    return $stmt->fetchAll();
+}
