@@ -11,6 +11,7 @@ if ($id) {
     $users = getUser($id);
     $users['comments'] = getUserComments($id);
     $users['favs'] = getFavourites($id);
+    $users['lastnews'] = getAllJournalistNews($id);
 } else {
     $users = getUsers($start, $n);
 }
