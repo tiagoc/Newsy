@@ -9,9 +9,9 @@ if (!$_POST['id'] && $_POST['title'] && $_POST['synopsis'] && $_POST['body']) {
     $synopsis = $_POST['synopsis'];
     $body = $_POST['body'];
     $categories = array_map('trim',explode(",",$_POST['categories']));  
-    $image = $_POST['photo[]'];
+    $images = $_POST['photoimg'];
 
-    saveDraft($title, $synopsis, $body, $categories,$image);
+    saveDraft($title, $synopsis, $body, $categories, $images);
 } else if ($_POST['id'] && $_POST['title'] && $_POST['synopsis'] && $_POST['body']) {
     //saveExistingNews($_POST['id'], $title, $synopsis, $body);
 }
