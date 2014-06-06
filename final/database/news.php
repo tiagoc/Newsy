@@ -270,6 +270,15 @@ function getCategories($news_id) {
     return $stmt->fetchAll();
 }
 
+function getImages($news_id) {
+    global $conn;
+    
+    $stmt = $conn->prepare("SELECT images.id, name FROM news join imagesnews on (news.id = news_id) join images on (images.id = image_id) WHERE news_id = ?;");
+    $stmt->execute(array($news_id));
+    
+    return $stmt->fetchAll();
+}
+
 function getTitleById($news_id) {
     global $conn;
     
