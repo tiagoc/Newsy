@@ -9,7 +9,7 @@
 
         <article>
             <h3><a href="#">{$article.title}</a><i class="fi-star favourite-star-disabled" onclick="$('.favourite-star-disabled, .favourite-star-enabled').toggleClass('favourite-star-disabled').toggleClass('favourite-star-enabled');"></i></h3>
-            <h4><small>Written by <a href="#">{$article.journalist}</a> on {$article.dates.publish.published_at}.</small></h4>
+            <h4><small>Written by <a href="{$BASE_URL}pages/users/journalistprofile.php?id={$article.journalist_id}">{$article.journalist}</a> on {$article.dates.publish.published_at}.</small></h4>
             <p></p>
 
             <div class="row">
