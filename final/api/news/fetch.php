@@ -14,7 +14,7 @@ $news = array();
 if ($id) {
     $news = getArticle($id);
     $news ? $news['categories'] = getCategories($news['id']) : null;
-    $news ? $news['images'] = getImages($news['id']) : null;
+    //$news ? $news['images'] = getImages($news['id']) : null;
     $news['dates'] = array("draft" => getLastDraftDate($news['id']), "publish" => getLastPublishDate($news['id']), "submission" => getLastSubmissionDate($news['id']), "reject" => getLastRejectDate($news['id']));
 } else {
     if ($query) {
