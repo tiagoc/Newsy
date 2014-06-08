@@ -20,7 +20,7 @@
                     <th width="500">Title</th>
                         {if $state == "Submitted"}
                         <th width="270">Submitted at</th>
-                        {elseif $state == "Drafts" }
+                        {elseif $state == "Draft" }
                         <th width="270">Created at</th>
                         {elseif $state == "Published"}
                         <th width="150">Published at</th>
@@ -41,7 +41,7 @@
                             {if $state == "Submitted"}
                             <td>{$article.dates.submission.submitted_at}</td>                                            
                             <td><a onclick="deleteNews({$article.id});" class="tiny button radious delete-button">Delete</a></td>                                    
-                        {elseif $state == "Drafts" }
+                        {elseif $state == "Draft" }
                             <td>{$article.dates.draft.updated_at}</td>                                            
                             <td><a onclick="submitExistingNews({$article.id});" class="tiny button radious submit-button">Submit</a></td>                                    
                         {elseif $state == "Published"}
