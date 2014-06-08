@@ -6,7 +6,7 @@ function submitExistingNews(news_id) {
     });
 
     request.done(function() {
-        $("#draft-" + news_id).remove();
+        $("#article-" + news_id).remove();
         alert("Successfully submitted!");
     });
 
@@ -24,6 +24,7 @@ function deleteNews(news_id) {
     });
 
     request.done(function() {
+        $("#article-" + news_id).remove();
         alert("Successfully deleted!");
     });
 
