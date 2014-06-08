@@ -7,4 +7,4 @@ if ($_POST['id']) {
     publishNews($_POST['id']);
 }
 
-header("Location: $BASE_URL" . "pages/users/mynews.php");
+//header("Location: $BASE_URL" . "pages/users/mynews.php");

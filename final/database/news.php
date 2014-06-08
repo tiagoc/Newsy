@@ -38,14 +38,14 @@ function getArticle($article_id) {
 function rejectNews($article_id) {
     global $conn;
 
-    $stmt = $conn->prepare("INSERT INTO rejects VALUES(?,DEFAULT);");
+    $stmt = $conn->prepare("INSERT INTO rejects VALUES(?,'reason',DEFAULT,$_SESSION[id]);");
     return $stmt->execute(array($article_id));
 }
 
 function publishNews($article_id) {
     global $conn;
 
-    $stmt = $conn->prepare("INSERT INTO publishes VALUES(?,DEFAULT);");
+    $stmt = $conn->prepare("INSERT INTO publishes VALUES(?,DEFAULT,$_SESSION[id]);");
     return $stmt->execute(array($article_id));
 }
 

@@ -16,16 +16,7 @@
                     <div class="large-12 columns">
                         <p><b>{$article.synopsis}</b></p>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="large-6 columns">
-                        <p>{$article.body}</p>
-                    </div>
-                    <div class="large-6 columns">
-                        <img src="http://placehold.it/400x240&text=[img]" />
-                    </div>
-                </div>                 
+                </div>                                 
 
                 <div id="category"><i class="fi-price-tag"></i> Categories</div> <p>
                     {foreach $article.categories as $c name=catlist}

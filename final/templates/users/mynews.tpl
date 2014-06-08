@@ -14,7 +14,7 @@
 </div>
 <div class="row">
     <div class="small-12 columns">                    
-        <table style="width: 100%">
+        <table style="width: 100%" class="responsive">
             <thead>
                 <tr>
                     <th width="500">Title</th>
@@ -31,12 +31,12 @@
 
                     {if $state != "Published"}
                         <th width="50"></th>
-                    {/if}
+                        {/if}
                 </tr>
             </thead>
             <tbody>                      
-                {foreach $news as $article}                                
-                    <tr id="draft-{$article.id}">
+                {foreach $news as $article}                                                    
+                        <tr id="article-{$article.id}">
                         <td><a href='{$BASE_URL}pages/news/view.php?article={$article.id}'>{$article.title}</a></td>
                             {if $state == "Submitted"}
                             <td>{$article.dates.submission.submitted_at}</td>                                            

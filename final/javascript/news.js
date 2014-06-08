@@ -75,3 +75,37 @@ function selectStars(estrela) {
         }
     }
 }
+
+function publishNews(news_id) {
+    var request = $.ajax({
+        type: "POST",
+        url: "../../actions/news/publish.php",
+        data: {id: news_id}
+    });
+
+    request.done(function() {
+        $("#article-" + news_id).remove();
+        alert("Successfully published!");
+    });
+
+    request.fail(function() {
+        alert("Something went wrong!");
+    });
+}
+
+function rejectNews(news_id) {
+        var request = $.ajax({
+        type: "POST",
+        url: "../../actions/news/reject.php",
+        data: {id: news_id}
+    });
+
+    request.done(function() {
+        $("#article-" + news_id).remove();
+        alert("Successfully rejected!");
+    });
+
+    request.fail(function() {
+        alert("Something went wrong!");
+    });
+}
