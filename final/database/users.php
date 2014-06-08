@@ -64,7 +64,7 @@ function doesUserExists($email) {
 function getUsers($start_id, $limit) {
     global $conn;
     
-    $stmt = $conn->prepare("SELECT email, name, role FROM users WHERE id >= ? LIMIT ?;");
+    $stmt = $conn->prepare("SELECT id, email, name, role FROM users WHERE id >= ? LIMIT ?;");
     $stmt->execute(array($start_id, $limit));
     
     return $stmt->fetchAll();

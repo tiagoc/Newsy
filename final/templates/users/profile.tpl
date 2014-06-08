@@ -12,8 +12,8 @@
             </div>
 
             <div class="row">
-                <div class="small-4 columns"><i class="fi-mail"></i><div id="email">
-                        <big>Email</big></div></div>
+                <div class="small-4 columns"><i class="fi-mail"></i>
+                    <div id="email"><big>Email</big></div></div>
                 <div class="small-8 columns">{$user.email}</div>
             </div>
             <br/>
@@ -24,8 +24,8 @@
             </div>
             <br/>
             <div class="row">
-                <div class="small-4 columns"><i class="fi-calendar"></i><div id="birthday">
-                        <big>Birthday</big></div></div> 
+                <div class="small-4 columns"><i class="fi-calendar"></i>
+                    <div id="birthday"><big>Birthday</big></div></div> 
                 <div class="small-8 columns">{$birthday_fixed}</div>
             </div>
             <br/>
@@ -57,25 +57,26 @@
     <div class="small-12 medium-6 large-6 columns">
         <h3 class="text-left">Favourite news</h3>
         <ul id="favouritesli">
-            
+
             {foreach $user.favs as $fav}
                 <li><i class="fi-star"></i>
                     <a href="../news/view.php?id={$fav.news_id}">{$fav.title}</a></li>
-            {/foreach}
-            
+                {/foreach}
+
         </ul>
     </div>
 
     <div class="small-12 medium-6 large-6 columns">
         <h3 class="text-left">Last comments</h3>
         <ul id="commentsli">
-                        
+
             {foreach $user.comments as $comment}
                 <li><i class="fi-comment"></i><div class="comment">{$comment.content}</div>
                     <a href="../news/view.php?id={$comment.news_id}">{$comment.title}</a></li>
-            {/foreach}
-            
+                {/foreach}
+
         </ul>
     </div>
 </div>
+
 {include 'common/footer.tpl'}

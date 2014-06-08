@@ -24,7 +24,8 @@
         <script src="{$BASE_URL}javascript/responsive-tables.js"></script>
         <script src="{$BASE_URL}javascript/foundation-datepicker.js"></script>
         <script src="{$BASE_URL}javascript/main.js"></script>
-        <script src="{$BASE_URL}javascript/news.js"></script>
+        <script src="{$BASE_URL}javascript/news.js"></script>     
+        <script src="{$BASE_URL}javascript/facebookapi.js"></script>
     </head>
 
 

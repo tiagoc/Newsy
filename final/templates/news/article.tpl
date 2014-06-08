@@ -4,8 +4,8 @@
 <div class="row">
 
     <!-- Main Content -->
-
-    <div class="large-9 columns" role="content">
+    
+        <div class="large-9 columns" role="content">
 
         <article>
             <h3><a href="#">{$article.title}</a><i class="fi-star favourite-star-disabled" onclick="$('.favourite-star-disabled, .favourite-star-enabled').toggleClass('favourite-star-disabled').toggleClass('favourite-star-enabled');"></i></h3>
@@ -48,6 +48,13 @@
                     <i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i></div> 
             <p class="text-right"><i class="fi-comment"></i> {$article.ncomments}</p> 
         </article>
+        
+        <div
+            class="fb-like"
+            data-send="true"
+            data-width="450"
+            data-show-faces="true">
+        </div>
 
 
         <div id="comments">
