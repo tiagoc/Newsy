@@ -9,10 +9,23 @@ $BASE_URL = 'http://gnomo.fe.up.pt/~lbaw1336/final/';
 
 $conn = new PDO('pgsql:host=vdbm.fe.up.pt;dbname=lbaw1336', 'lbaw1336', 'sK264hg6');
 
+
+// LOCAL CONFIGS -------------------------------------------------------------------
+
+// Local DB
+//$conn = new PDO('pgsql:host=localhost;dbname=lbaw1336', 'lbaw1336', 'sK264hg6');
+
+// Cristiano
 //$BASE_DIR = '/usr/users2/mieic2010/ei10014/public_html/Newsy/final/';
 //$BASE_URL = 'http://gnomo.fe.up.pt/~ei10014/Newsy/final/';
 
-//$conn = new PDO('pgsql:host=localhost;dbname=lbaw1336', 'lbaw1336', 'sK264hg6');
+//Tiago
+//$BASE_DIR = 'C:/xampp/htdocs/Newsy/final/';
+//$BASE_URL = 'http://localhost/Newsy/final/';
+
+// END LOCAL CONFIGS -------------------------------------------------------------------
+
+
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
