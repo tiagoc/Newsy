@@ -1,7 +1,9 @@
 <?php
 
 session_set_cookie_params(3600, '/~lbaw1336/final/');
-//session_set_cookie_params(3600, '/~ei10014/Newsy/final/');
+//session_set_cookie_params(3600, '/~ei10014/Newsy/final/'); // cookies locais Cristiano
+//session_set_cookie_params(3600, '/Newsy/final/'); //cookies locais Tiago
+
 session_start();
 
 $BASE_DIR = '/opt/lbaw/lbaw1336/public_html/final/';
