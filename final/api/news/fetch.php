@@ -8,6 +8,7 @@ $id = $_GET['id'];
 $query = $_GET['q'];
 $start = $_GET['start'] ? $_GET['start'] : 1;
 $n = $_GET['n'] ? $_GET['n'] : 10;
+$user_id = $_GET['user_id'];
 
 $news = array();
 
@@ -20,8 +21,8 @@ if ($id) {
     if ($query) {
         $news = getNewsByQuery($query, $start, $n, $state);
     } else {
-        if ($start && $n) {
-            $news = getNews($start, $n, $state);
+        if ($user_id) {
+            $news = getNews($start, $n, $state, $user_id);
         } else {
             $news = getNews($start, $n, $state);
         }

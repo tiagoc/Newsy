@@ -1,12 +1,26 @@
 <?php
 
-function getNews($start_id, $limit, $state) {
+function getNews($start_id, $limit, $state, $user_id = false) {
     global $conn;
-    $stmt = $conn->prepare("SELECT news.id, title, synopsis, body, journalist_id, name as journalist, ncomments
+
+    if (!$user_id) {
+        $stmt = $conn->prepare("SELECT news.id, title, synopsis, body, journalist_id, name as journalist, ncomments
                             FROM news join users on (news.journalist_id = users.id)
                             WHERE state = ? AND news.id >= ? LIMIT ?;
     ");
-    $stmt->execute(array($state, $start_id, $limit));
+        $stmt->execute(array($state, $start_id, $limit));
+    } else {
+        $stmt = $conn->prepare("SELECT news.id, title, synopsis, body, journalist_id, name as journalist, ncomments
+                       FROM news join users on (news.journalist_id = users.id)
+                       WHERE state = :state AND news.id >= :start_id AND news.journalist_id = :user_id LIMIT :n;
+    ");
+        $stmt->bindValue(':state', $state, PDO::PARAM_STR);
+        $stmt->bindValue(':start_id', $start_id, PDO::PARAM_INT);
+        $stmt->bindValue(':n', $n, PDO::PARAM_INT);
+        $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+    }
 
     return $stmt->fetchAll();
 }
@@ -26,7 +40,6 @@ function rejectNews($article_id) {
 
     $stmt = $conn->prepare("INSERT INTO rejects VALUES(?,DEFAULT);");
     return $stmt->execute(array($article_id));
-    
 }
 
 function publishNews($article_id) {
@@ -54,7 +67,7 @@ function associateCategoriesNews($categories, $news_id) {
     }
 }
 
-function insertImages($images) { 
+function insertImages($images) {
     global $conn;
 
     foreach ($images as $c) {
@@ -86,7 +99,7 @@ function submitNews($title, $synopsis, $body, $categories) {
     $stmt->execute();
     $id_array = $stmt->fetch();
     $conn->query("COMMIT;");
-    
+
     /* associate article to categories */
     $id = $id_array['id'];
     associateCategoriesNews($categories, $id);
@@ -123,9 +136,9 @@ function saveDraft($title, $synopsis, $body, $categories, $images) {
 
 function saveExistingNews($article_id, $title, $synopsis, $body, $categories) {
     global $conn;
-    
+
     /* TODO: what about value update? */
-    
+
     $stmt = $conn->prepare("INSERT INTO drafts VALUES(?,DEFAULT);");
     return $stmt->execute(array($article_id));
 }
@@ -263,36 +276,36 @@ function getComments($news_id) {
 
 function getCategories($news_id) {
     global $conn;
-    
+
     $stmt = $conn->prepare("SELECT categories.id, name FROM news join categoriesnews on (news.id = news_id) join categories on (categories.id = category_id) WHERE news_id = ?;");
     $stmt->execute(array($news_id));
-    
+
     return $stmt->fetchAll();
 }
 
 function getImages($news_id) {
     global $conn;
-    
+
     $stmt = $conn->prepare("SELECT images.id, name FROM news join imagesnews on (news.id = news_id) join images on (images.id = image_id) WHERE news_id = ?;");
     $stmt->execute(array($news_id));
-    
+
     return $stmt->fetchAll();
 }
 
 function getTitleById($news_id) {
     global $conn;
-    
+
     $stmt = $conn->prepare("SELECT title FROM news WHERE id = ?;");
     $stmt->execute(array($news_id));
-    
+
     return $stmt->fetch();
 }
 
 function search($string) {
     global $conn;
-    
+
     $stmt = $conn->prepare("SELECT * FROM news WHERE title @@ plainto_tsquery(?);");
     $stmt->execute(array($string));
-    
+
     return $stmt->fetchAll();
 }

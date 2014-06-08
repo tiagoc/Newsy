@@ -2,7 +2,9 @@
 include_once '../../config/init.php';
 include_once $BASE_DIR . "database/news.php";
 
-$submittednews = getAllSubmittedNews();
+$state = $_GET['state'] ? $_GET['state'] : 'published';
+$start = $_GET['start'] ? $_GET['start'] : 1;
+$n = $_GET['n'] ? $_GET['n'] : 10;
 
 $dates = array();
 $reasons = array();

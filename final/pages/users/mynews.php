@@ -9,7 +9,7 @@ $n = $_GET['n'] ? $_GET['n'] : 10;
 
 $reasons = array();
 
-$news = json_decode(file_get_contents($BASE_URL . "api/news/fetch.php?state=$state&start=$start&n=$n"), true);
+$news = json_decode(file_get_contents($BASE_URL . "api/news/fetch.php?state=$state&start=$start&n=$n&user_id=$_SESSION[id]"), true);
 
 foreach ($news as &$article) {
     if ($state == "rejected") {
