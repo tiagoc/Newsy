@@ -3,21 +3,22 @@
 include_once '../../config/init.php';
 include_once $BASE_DIR . "database/news.php";
 
-$news = getAllJournalistNews($_SESSION['id']);
+$state = $_GET['state'] ? $_GET['state'] : 'published';
+$start = $_GET['start'] ? $_GET['start'] : 1;
+$n = $_GET['n'] ? $_GET['n'] : 10;
 
-$dates = array();
 $reasons = array();
-foreach ($news as &$article) { // & needed to directly reference the array $news
-    $dates[$article['id']] = getNewsLastDates($article['id']);
-    if ($article['state'] === 'rejected') {
-        $dates[$article['id']] = getLastRejectReason($article['id']);
+
+$news = json_decode(file_get_contents($BASE_URL . "api/news/fetch.php?state=$state&start=$start&n=$n"), true);
+
+foreach ($news as &$article) {
+    if ($state == "rejected") {
+        $reasons[$article['id']] = getLastRejectReason($article['id']);
     }
-    
-    $article['state'] = ucwords($article['state']);
 }
 
 $smarty->assign("news", $news);
-$smarty->assign("dates", $dates);
+$smarty->assign("state", ucfirst($state));
 
 $smarty->display("users/mynews.tpl");
 ?>

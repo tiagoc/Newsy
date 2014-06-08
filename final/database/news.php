@@ -104,7 +104,7 @@ function saveDraft($title, $synopsis, $body, $categories, $images) {
 
     /* insert non-existent categories */
     insertCategories($categories);
-    insertImages($images);
+    //insertImages($images);
 
     /* insert article per-say */
     $conn->query("BEGIN;");
@@ -118,7 +118,7 @@ function saveDraft($title, $synopsis, $body, $categories, $images) {
     /* associate article to categories */
     $id = $id_array['id'];
     associateCategoriesNews($categories, $id);
-    associateImageNews($images, $id);
+    //associateImageNews($images, $id);
 }
 
 function saveExistingNews($article_id, $title, $synopsis, $body, $categories) {

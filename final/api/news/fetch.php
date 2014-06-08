@@ -31,6 +31,7 @@ if ($id) {
         $article['categories'] = getCategories($article['id']);
         //$article['images'] = getImages($article['id']);
         $article['dates'] = array("draft" => getLastDraftDate($article['id']), "publish" => getLastPublishDate($article['id']), "submission" => getLastSubmissionDate($article['id']), "reject" => getLastRejectDate($article['id']));
+        $article['state'] = ucwords($article['state']);
     }
 }
 echo json_encode($news);
