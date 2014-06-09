@@ -9,42 +9,29 @@
                 <div class="row">        
                     <div class="large-10 columns">
                         <label for="title"><b>Title</b>  <small>required</small></label>
-                        <input type="text" name="title" required/>
+                        <input type="text" name="title" placeholder="Insert title here" required/>
                         <small class="error">Title is required. Choose it carefully, this is your headline!</small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="large-10 columns">
                         <label for="synopsis"><b>Synopsis</b>  <small>required</small></label>
-                        <textarea name="synopsis" required></textarea>
-                        <small class="error">Please insert a small synopsis of your article here.</small>
+                        <textarea name="synopsis" placeholder="Insert synopsis here" required></textarea>
                     </div>
                 </div>
                 <div class="row">
                     <div class="large-10 columns">
                         <label for="body"><b>Body</b>  <small>required</small></label>
-                        <textarea name="body" required></textarea>
-                        <small class="error">Mandatory field. This is the body of your article.</small>
+                        <textarea id="body" name="body" placeholder="Insert body here" required></textarea>                        
                     </div>
                 </div>
                 <div class="row">
                     <div class="large-10 columns">
                         <label for="categories"><b>Categories</b>  <small>required</small></label>
-                        <input type="text" name="categories" required/>
+                        <input type="text" name="categories" placeholder="Insert categories here (separated by commas)" required/>
                         <small class="error">Please insert at least one category.</small>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="large-10 columns">
-                        <label for="categories"><b>Images</b></label>
-                        <form id="imageform" method="post" enctype="multipart/form-data" action='ajaxImageUpload.php' style="clear:both"> 
-                            <div id='imageloadstatus' style='display:none'><img src="{$BASE_URL}images/assets/loader.gif" alt="Uploading...."/></div>
-                            <div id='imageloadbutton'>
-                                <input type="file" name="photos[]" id="photoimg" multiple="true" />
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                </div>              
                 <div class="row">
                     <div class="large-10 columns">
                         <input type="submit" value= "Save" class="right button tiny round" onclick="this.form.action = '{$BASE_URL}actions/news/save.php'"/>
@@ -55,4 +42,5 @@
         </div>
     </div>
 </div>
+
 {include 'common/footer.tpl'}
