@@ -321,8 +321,14 @@ function search($string) {
 function insertComment($news_id, $content) {
     global $conn;
 
+    $conn->query("BEGIN");
     $stmt = $conn->prepare("INSERT INTO comments values(DEFAULT, ?, DEFAULT, $_SESSION[id], ?)");
-    return $stmt->execute(array($content, $news_id));     
+    $stmt->execute(array($content, $news_id));     
+    $stmt = $conn->prepare("SELECT comments.id, name, user_id, content, to_char(published_at,'DD/MM/YYYY at HH24:MI') as published_at, news_id FROM comments join users on (users.id = comments.user_id) ORDER BY comments.id desc LIMIT 1");
+    $stmt->execute();
+    $conn->query("COMMIT;");
+    
+    return $stmt->fetch();
 }
 
 function deleteComment($comment_id) {

@@ -90,13 +90,19 @@ function rejectNews(news_id) {
     });
 }
 
-function insertComment(news_id, content) {       
+function insertComment(news_id, content) {
     var request = $.ajax({
         type: "POST",
         url: "../../actions/news/insertcomment.php",
         data: {content: content, news_id: news_id}
     });
-    
+    request.done(function(data) {
+        var comment = jQuery.parseJSON(data);
+        
+        $('#comments').prepend('<div id="comment-' + comment.id + '" class="panel radius"><h5><small><div class="comment-username"><a href="../users/profile.php?id=' + comment.user_id + '">' + comment.name + '</a> <div class="comment-datetime">' + comment.published_at + '</div><button type="button" onclick="deleteComment(' + comment.id + ');" class="comment-delete">Delete</button><button type="button" class="comment-edit">Edit</button></small></h5><p>' + comment.content + '</p></div>');
+        
+        $('#comment-content').val('');
+    });
     request.fail(function() {
         alert("Something went wrong!");
     });
@@ -108,7 +114,9 @@ function deleteComment(comment_id) {
         url: "../../actions/news/deletecomment.php",
         data: {comment_id: comment_id}
     });
-    
+    request.done(function() {
+        $();
+    });
     request.fail(function() {
         alert("Something went wrong!");
     });

@@ -54,7 +54,8 @@
 
             {foreach $comments as $comment}
                 <div id="comment-{$comment.id}" class="panel radius">
-                    <h5><small><div class="comment-username"><a href="../users/profile.php?id={$comment.user_id}">{$comment.name}</a> <div class="comment-datetime">{$comment.published_at}</div><button type="button" class="comment-delete">Delete</button><button type="button" class="comment-edit">Edit</button></small></h5>
+                    <h5><small><div class="comment-username"><a href="../users/profile.php?id={$comment.user_id}">{$comment.name}</a> <div class="comment-datetime">{$comment.published_at}</div>
+                                <button type="button" onclick="deleteComment({$comment.id});" class="comment-delete">Delete</button><button type="button" class="comment-edit">Edit</button></small></h5>
                     <p>{$comment.content}</p>
                 </div>
             {/foreach}           
