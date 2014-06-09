@@ -33,8 +33,12 @@
             <hr/>    
         {/foreach}
 
-        <button>Previous</button>
-        <button>Next</button>
+
+        {if $start > 1}
+            <a href="{$BASE_URL}pages/news/list.php?start={$start-$n}&n={$n}" class="button left">Previous Page</a>
+        {/if}
+                
+        <a href="{$BASE_URL}pages/news/list.php?start={$lastnewsid+1}&n={$n}" class="button right">Next Page</a>
     </div>
     <!-- End Main Content -->
 
