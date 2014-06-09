@@ -312,7 +312,7 @@ function getTitleById($news_id) {
 function search($string) {
     global $conn;
 
-    $stmt = $conn->prepare("SELECT * FROM news WHERE title @@ plainto_tsquery(?) AND state='published';");
+    $stmt = $conn->prepare("SELECT * FROM news WHERE title @@ plainto_tsquery(?);");
     $stmt->execute(array($string));
 
     return $stmt->fetchAll();
@@ -336,4 +336,18 @@ function deleteComment($comment_id) {
          
     $stmt = $conn->prepare("DELETE FROM comments WHERE id = ?");
     return $stmt->execute(array($comment_id));
+}
+
+function markFavourite($news_id) {
+    global $conn;
+    
+    $stmt = $conn->prepare("INSERT into favourites values(?, $_SESSION[id], DEFAULT)");   
+    return $stmt->execute(array($news_id));
+}
+
+function unmarkFavourite($news_id) {
+    global $conn;
+    
+    $stmt = $conn->prepare("DELETE from favourites where news_id = ? and user_id = $_SESSION[id]");
+    return $stmt->execute(array($news_id));
 }

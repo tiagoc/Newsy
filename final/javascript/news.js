@@ -49,7 +49,7 @@ function fillCategoryWidget() {
     });
 }
 
-function selectStars(estrela) {
+function selectStars(news_id, star) {
     var found = false;
     for (var i = 0; i < $("#rating").find(".fi-star").length; i++) {
 
@@ -60,10 +60,46 @@ function selectStars(estrela) {
             $("#rating").find(".fi-star").eq(i).removeClass('rating-star-enabled').addClass('rating-star-disabled');
         }
 
-        if ($(estrela).position().top == $("#rating").find(".fi-star").eq(i).position().top && $(estrela).position().left == $("#rating").find(".fi-star").eq(i).position().left) {
+        if ($(star).position().top == $("#rating").find(".fi-star").eq(i).position().top && $(star).position().left == $("#rating").find(".fi-star").eq(i).position().left) {
             found = true;
         }
     }
+}
+
+function toggleFavourite(news_id) {
+    $('.favourite-star-disabled, .favourite-star-enabled').toggleClass('favourite-star-disabled').toggleClass('favourite-star-enabled');
+    
+    if ($('#favouritestar').hasClass('favourite-star-disabled')) {
+        /* un-mark as favourite */
+        unmakeFavourite(news_id);
+    } else {
+        /* mark as favourite */
+        makeFavourite(news_id);
+    }
+}
+
+function makeFavourite(news_id) {
+    var request = $.ajax({
+        type: "POST",
+        url: "../../actions/news/favourite.php",
+        data: {news_id: news_id}
+    });
+
+    request.fail(function() {
+        alert("Something went wrong!");
+    });
+}
+
+function unmakeFavourite(news_id) {
+    var request = $.ajax({
+        type: "POST",
+        url: "../../actions/news/unfavourite.php",
+        data: {news_id: news_id}
+    });
+
+    request.fail(function() {
+        alert("Something went wrong!");
+    });
 }
 
 function publishNews(news_id) {
@@ -98,9 +134,9 @@ function insertComment(news_id, content) {
     });
     request.done(function(data) {
         var comment = jQuery.parseJSON(data);
-        
+
         $('#comments').prepend('<div id="comment-' + comment.id + '" class="panel radius"><h5><small><div class="comment-username"><a href="../users/profile.php?id=' + comment.user_id + '">' + comment.name + '</a> <div class="comment-datetime">' + comment.published_at + '</div><button type="button" onclick="deleteComment(' + comment.id + ');" class="comment-delete">Delete</button><button type="button" class="comment-edit">Edit</button></small></h5><p>' + comment.content + '</p></div>');
-        
+
         $('#comment-content').val('');
     });
     request.fail(function() {
@@ -108,15 +144,15 @@ function insertComment(news_id, content) {
     });
 }
 
-function deleteComment(comment_id) {        
-    $('#comment-'+comment_id).fadeOut();
-    
+function deleteComment(comment_id) {
+    $('#comment-' + comment_id).fadeOut();
+
     var request = $.ajax({
         type: "POST",
         url: "../../actions/news/deletecomment.php",
         data: {comment_id: comment_id}
     });
-    
+
     request.fail(function() {
         alert("Something went wrong!");
     });

@@ -8,7 +8,7 @@
     <div class="large-9 columns" role="content">
 
         <article>
-            <h3><a href="#">{$article.title}</a><i class="fi-star favourite-star-disabled" onclick="$('.favourite-star-disabled, .favourite-star-enabled').toggleClass('favourite-star-disabled').toggleClass('favourite-star-enabled');"></i></h3>
+            <h3><a href="#">{$article.title}</a><i id="favouritestar" class="fi-star favourite-star-disabled" onclick="toggleFavourite({$article.id});"></i></h3>
             <h4><small>Written by <a href="{$BASE_URL}pages/users/journalistprofile.php?id={$article.journalist_id}">{$article.journalist}</a> on {$article.dates.publish.published_at}.</small></h4>
             <p></p>
 
@@ -42,7 +42,7 @@
             <div id="rating">Rating: <a id="stars">
                     <script type="text/javascript">
                         $(document).ready(function() {
-                            $("#rating").find(".fi-star").attr('onclick', 'selectStars(this);');
+                            $("#rating").find(".fi-star").attr('onclick', 'selectStars({$article.id},this);');
                         });
                     </script>
                     <i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i></div> 
