@@ -5,11 +5,6 @@ function submitExistingNews(news_id) {
         data: {id: news_id}
     });
 
-    request.done(function() {
-        $("#article-" + news_id).remove();
-        alert("Successfully submitted!");
-    });
-
     request.fail(function() {
         alert("Something went wrong!");
     });
@@ -21,11 +16,6 @@ function deleteNews(news_id) {
         type: "POST",
         url: "../../actions/news/delete.php",
         data: {id: news_id}
-    });
-
-    request.done(function() {
-        $("#article-" + news_id).remove();
-        alert("Successfully deleted!");
     });
 
     request.fail(function() {
@@ -83,9 +73,16 @@ function publishNews(news_id) {
         data: {id: news_id}
     });
 
-    request.done(function() {
-        $("#article-" + news_id).remove();
-        alert("Successfully published!");
+    request.fail(function() {
+        alert("Something went wrong!");
+    });
+}
+
+function rejectNews(news_id) {
+    var request = $.ajax({
+        type: "POST",
+        url: "../../actions/news/reject.php",
+        data: {id: news_id}
     });
 
     request.fail(function() {
@@ -93,18 +90,25 @@ function publishNews(news_id) {
     });
 }
 
-function rejectNews(news_id) {
-        var request = $.ajax({
+function insertComment(news_id, content) {       
+    var request = $.ajax({
         type: "POST",
-        url: "../../actions/news/reject.php",
-        data: {id: news_id}
+        url: "../../actions/news/insertcomment.php",
+        data: {content: content, news_id: news_id}
     });
-
-    request.done(function() {
-        $("#article-" + news_id).remove();
-        alert("Successfully rejected!");
+    
+    request.fail(function() {
+        alert("Something went wrong!");
     });
+}
 
+function deleteComment(comment_id) {
+    var request = $.ajax({
+        type: "POST",
+        url: "../../actions/news/deletecomment.php",
+        data: {comment_id: comment_id}
+    });
+    
     request.fail(function() {
         alert("Something went wrong!");
     });

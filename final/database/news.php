@@ -145,9 +145,9 @@ function saveExistingNews($article_id, $title, $synopsis, $body, $categories) {
     $stmt->execute(array($title, $synopsis, $body, $article_id));
 
     $stmt = $conn->prepare("INSERT INTO drafts VALUES(?,DEFAULT);");
-    $stmt->execute(array($article_id));        
+    $stmt->execute(array($article_id));
     $conn->query("COMMIT;");
-    
+
     associateCategoriesNews($categories, $article_id);
 }
 
@@ -276,7 +276,7 @@ function getNewsByQuery($query, $start, $n, $state) {
 function getComments($news_id) {
     global $conn;
 
-    $stmt = $conn->prepare("SELECT comments.id, content, published_at, name, user_id FROM comments join users on (comments.user_id = users.id) WHERE news_id = ?;");
+    $stmt = $conn->prepare("SELECT comments.id, content, to_char(published_at,'DD/MM/YYYY at HH24:MI') as published_at, name, user_id FROM comments join users on (comments.user_id = users.id) WHERE news_id = ?;");
     $stmt->execute(array($news_id));
 
     return $stmt->fetchAll();
@@ -316,4 +316,18 @@ function search($string) {
     $stmt->execute(array($string));
 
     return $stmt->fetchAll();
+}
+
+function insertComment($news_id, $content) {
+    global $conn;
+
+    $stmt = $conn->prepare("INSERT INTO comments values(DEFAULT, ?, DEFAULT, $_SESSION[id], ?)");
+    return $stmt->execute(array($content, $news_id));     
+}
+
+function deleteComment($comment_id) {
+    global $conn;
+         
+    $stmt = $conn->prepare("DELETE FROM comments WHERE id = ?");
+    return $stmt->execute(array($comment_id));
 }

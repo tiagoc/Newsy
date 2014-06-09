@@ -4,8 +4,8 @@
 <div class="row">
 
     <!-- Main Content -->
-    
-        <div class="large-9 columns" role="content">
+
+    <div class="large-9 columns" role="content">
 
         <article>
             <h3><a href="#">{$article.title}</a><i class="fi-star favourite-star-disabled" onclick="$('.favourite-star-disabled, .favourite-star-enabled').toggleClass('favourite-star-disabled').toggleClass('favourite-star-enabled');"></i></h3>
@@ -30,15 +30,15 @@
             </div>
 
             <div id="category"><i class="fi-price-tag"></i> Categories</div> <p>
-                    {foreach $article.categories as $c name=catlist}
-                        {$c.name}
-                        {if not $smarty.foreach.catlist.last}
-                            , 
-                        {/if}
-                    {foreachelse}
-                        - none -
-                    {/foreach}
-                </p>
+                {foreach $article.categories as $c name=catlist}
+                    {$c.name}
+                    {if not $smarty.foreach.catlist.last}
+                        , 
+                    {/if}
+                {foreachelse}
+                    - none -
+                {/foreach}
+            </p>
             <div id="rating">Rating: <a id="stars">
                     <script type="text/javascript">
                         $(document).ready(function() {
@@ -48,13 +48,6 @@
                     <i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i><i class="fi-star rating-star-disabled"></i></div> 
             <p class="text-right"><i class="fi-comment"></i> {$article.ncomments}</p> 
         </article>
-        
-        <div
-            class="fb-like"
-            data-send="true"
-            data-width="450"
-            data-show-faces="true">
-        </div>
 
 
         <div id="comments">
@@ -64,10 +57,13 @@
                     <h5><small><div class="comment-username"><a href="../users/profile.php?id={$comment.user_id}">{$comment.name}</a> <div class="comment-datetime">{$comment.published_at}</div><button type="button" class="comment-delete">Delete</button><button type="button" class="comment-edit">Edit</button></small></h5>
                     <p>{$comment.content}</p>
                 </div>
-            {/foreach}
+            {/foreach}           
 
-            <textarea name="body"></textarea>
+        </div>
 
+        <div id="commmentarea">
+            <textarea id="comment-content" placeholder="Insert your comment here..."></textarea>
+            <button onclick="insertComment({$article.id}, $('#comment-content').val());" class="button round right tiny">Submit</button>
         </div>
 
     </div>
