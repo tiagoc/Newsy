@@ -13,11 +13,13 @@ $news = json_decode(file_get_contents($BASE_URL . "api/news/fetch.php?state=$sta
 
 foreach ($news as &$article) {
     if ($state == "rejected") {
-        $reasons[$article['id']] = getLastRejectReason($article['id']);
+        $reason = getLastRejectReason($article['id']);
+        $reasons[$article['id']] = $reason['reason'];
     }
 }
 
 $smarty->assign("news", $news);
+$smarty->assign("reasons", $reasons);
 $smarty->assign("state", ucfirst($state));
 
 $smarty->display("users/mynews.tpl");

@@ -10,9 +10,7 @@ if (!$_POST['id'] && $_POST['title'] && $_POST['synopsis'] && $_POST['body'] && 
     $categories = array_map('trim',explode(",",$_POST['categories']));        
 
     submitNews($title, $synopsis, $body, $categories);
-    $bool = true;
 } else if ($_POST['id']) {    
-    var_dump(submitExistingNews($_POST['id']));
-    $bool = true;
+    submitExistingNews($_POST['id']);
 }
 header("Location: $BASE_URL" . "pages/users/mynews.php");
