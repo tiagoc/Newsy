@@ -5,7 +5,7 @@
 
     <!-- Main Blog Content -->
 
-    <div class="large-9 columns" role="content" id="news">        
+    <div class="large-9 columns" id="news">        
         {foreach $news as $article}
             <article id="article-{$article.id}">
 
@@ -18,7 +18,7 @@
                     </div>
                 </div>                                 
 
-                <div id="category"><i class="fi-price-tag"></i> Categories</div> <p>
+                <div class="category"><i class="fi-price-tag"></i> Categories</div><p>
                     {foreach $article.categories as $c name=catlist}
                         {$c.name}
                         {if not $smarty.foreach.catlist.last}

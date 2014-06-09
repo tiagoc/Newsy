@@ -35,9 +35,11 @@
 
         <div class="row">
             <div class="small-12 columns">
-                <span class="left">
-                    <a href="{$BASE_URL}"><h1>Newsy <small>Fresh news. Your way.</small></h1></a>
-                </span>
+                <h1>
+                    <span class="left">
+                        <a href="{$BASE_URL}">Newsy <small>Fresh news. Your way.</small></a>
+                    </span>
+                </h1>
 
                 <span class="right">  
                     {if $NAME}

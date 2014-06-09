@@ -2,42 +2,42 @@ body {
     padding: 1em;
 }
 
+h1 span a {
+    color: black;
+}
+
 @media only screen and (max-width: 30em) { 
 
     h1 {
-    position: relative;
-    margin-top: 2%;
-    font-size: 250%;
-    font-size-adjust: auto;
-    font-kerning: auto;
-    /*font-size: 50px;*/
-    font-family: 'Lobster', helvetica, arial;
-    
+        position: relative;
+        margin-top: 2%;
+        font-size: 250%;
+        font-kerning: auto;
+        font-family: 'Lobster', helvetica, arial;
+
     }
-    
+
     h1 small{
         visibility: hidden;
         font-size: 0;
     }
-    
+
 }
-   
+
 @media only screen and (min-width: 30em) and (max-width: 120.063em) { 
 
-h1 {
-    position: relative;
-    margin-top: 2%;
-    font-size: 300%;
-    font-size-adjust: auto;
-    font-kerning: auto;
-    /*font-size: 50px;*/
-    font-family: 'Lobster', helvetica, arial;
-}
+    h1 {
+        position: relative;
+        margin-top: 2%;
+        font-size: 300%;
+        font-kerning: auto;
+        font-family: 'Lobster', helvetica, arial;
+    }
 }
 
 article h3 {
     margin-bottom: -2%;
-    
+
 }
 
 article img {
@@ -49,7 +49,7 @@ article img {
 }
 
 .login-modal input{
-    
+
 }
 
 p {
@@ -99,7 +99,7 @@ textarea{
 }
 
 /* Main Page - News */
-#category, #rating{
+.category, #rating{
     padding-bottom: 3px;
     color: #008cba;
     font-weight: bold;
@@ -430,26 +430,26 @@ label[for="facebook"], label[for="googleplus"], label[for="linkedin"]{
 /* MESSAGES */
 
 .error {
-  background-color: #FFAAAA;
-  padding: 10px;
-  color: #333;
-  font-weight: bold;
+    background-color: #FFAAAA;
+    padding: 10px;
+    color: #333;
+    font-weight: bold;
 }
 
 .success {
-  background-color: #AAFFAA;
-  padding: 10px;
-  color: #333;
-  font-weight: bold;
+    background-color: #AAFFAA;
+    padding: 10px;
+    color: #333;
+    font-weight: bold;
 }
 
 .close {
-  float: right;
-  text-decoration: none;
-  color: #666;
+    float: right;
+    text-decoration: none;
+    color: #666;
 }
 
 .field_error {
-  color: red;
-  font-size: 70%;
+    color: red;
+    font-size: 70%;
 }
