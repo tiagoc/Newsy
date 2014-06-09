@@ -9,7 +9,9 @@
 
         <article>
             <h3><a href="#">{$article.title}</a><i id="favouritestar" class="fi-star favourite-star-disabled" onclick="toggleFavourite({$article.id});"></i></h3>
-            <h4><small>Written by <a href="{$BASE_URL}pages/users/journalistprofile.php?id={$article.journalist_id}">{$article.journalist}</a> on {$article.dates.publish.published_at}.</small></h4>
+            <h4><small>Written by <a href="{$BASE_URL}pages/users/journalistprofile.php?id={$article.journalist_id}">{$article.journalist}</a> on {$article.dates.publish.published_at}.</small>
+                <small align="right"><a href="{$BASE_URL}pages/news/edit.php?id={$article.id}">{$edit}</a></small>
+            </h4>
             <p></p>
 
             <div class="row">
