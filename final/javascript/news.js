@@ -157,3 +157,23 @@ function deleteComment(comment_id) {
         alert("Something went wrong!");
     });
 }
+
+function checkFavourite(news_id, user_id) {
+    var request = $.ajax({
+        type: "GET",
+        url: "../../api/news/isfavourite.php",
+        data: {news_id: news_id, user_id: user_id}
+    });
+
+    request.done(function(data) {
+        var reply = jQuery.parseJSON(data);
+        
+        if (reply.status === true) {
+            $('.favourite-star-disabled, .favourite-star-enabled').toggleClass('favourite-star-disabled').toggleClass('favourite-star-enabled');
+        }
+    });
+
+    request.fail(function() {
+        alert("Something went wrong!");
+    });
+}

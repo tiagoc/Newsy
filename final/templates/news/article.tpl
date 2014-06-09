@@ -75,4 +75,11 @@
 
 </div>
 
+
+<script>
+    $(document).ready(function() {
+        checkFavourite({$article.id},{$ID});
+    });
+</script>
+
 {include 'common/footer.tpl'}

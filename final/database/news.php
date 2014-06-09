@@ -323,31 +323,40 @@ function insertComment($news_id, $content) {
 
     $conn->query("BEGIN");
     $stmt = $conn->prepare("INSERT INTO comments values(DEFAULT, ?, DEFAULT, $_SESSION[id], ?)");
-    $stmt->execute(array($content, $news_id));     
+    $stmt->execute(array($content, $news_id));
     $stmt = $conn->prepare("SELECT comments.id, name, user_id, content, to_char(published_at,'DD/MM/YYYY at HH24:MI') as published_at, news_id FROM comments join users on (users.id = comments.user_id) ORDER BY comments.id desc LIMIT 1");
     $stmt->execute();
     $conn->query("COMMIT;");
-    
+
     return $stmt->fetch();
 }
 
 function deleteComment($comment_id) {
     global $conn;
-         
+
     $stmt = $conn->prepare("DELETE FROM comments WHERE id = ?");
     return $stmt->execute(array($comment_id));
 }
 
 function markFavourite($news_id) {
     global $conn;
-    
-    $stmt = $conn->prepare("INSERT into favourites values(?, $_SESSION[id], DEFAULT)");   
+
+    $stmt = $conn->prepare("INSERT into favourites values(?, $_SESSION[id], DEFAULT)");
     return $stmt->execute(array($news_id));
 }
 
 function unmarkFavourite($news_id) {
     global $conn;
-    
+
     $stmt = $conn->prepare("DELETE from favourites where news_id = ? and user_id = $_SESSION[id]");
     return $stmt->execute(array($news_id));
+}
+
+function isFavourite($news_id, $user_id) {
+    global $conn;
+
+    $stmt = $conn->prepare("SELECT news_id from favourites where news_id = ? and user_id = ?");
+    $stmt->execute(array($news_id, $user_id));
+    
+    return $stmt->fetch() ? true : false;
 }
