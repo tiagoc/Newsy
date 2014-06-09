@@ -25,24 +25,24 @@
                             <td class="text-center roles">
                                 <select name='role'>
                                     {if $u.role=='user'}
-                                        <option value='user' selected="selected">User</option>
+                                        <option value="user" selected="selected">User</option>
                                     {else}
-                                        <option>User</option>
+                                        <option value="user">User</option>
                                     {/if}
                                     {if $u.role=='journalist'}
-                                        <option value='journalist' selected="selected">Journalist</option>
+                                        <option value="journalist" selected="selected">Journalist</option>
                                     {else}
-                                        <option>Journalist</option>
+                                        <option value="journalist">Journalist</option>
                                     {/if}
                                     {if $u.role=='editor'}
-                                        <option value='editor' selected="selected">Editor</option>
+                                        <option value="editor" selected="selected">Editor</option>
                                     {else}
-                                        <option>Editor</option>
+                                        <option value="editor">Editor</option>
                                     {/if}
                                     {if $u.role=='admin'}
-                                        <option value='admin' selected="selected">Administrator</option>
+                                        <option value="admin" selected="selected">Administrator</option>
                                     {else}
-                                        <option>Administrator</option>
+                                        <option value="admin">Administrator</option>
                                     {/if}
                                 </select>
                             </td>
