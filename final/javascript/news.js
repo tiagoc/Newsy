@@ -108,15 +108,15 @@ function insertComment(news_id, content) {
     });
 }
 
-function deleteComment(comment_id) {
+function deleteComment(comment_id) {        
+    $('#comment-'+comment_id).fadeOut();
+    
     var request = $.ajax({
         type: "POST",
         url: "../../actions/news/deletecomment.php",
         data: {comment_id: comment_id}
     });
-    request.done(function() {
-        $();
-    });
+    
     request.fail(function() {
         alert("Something went wrong!");
     });
