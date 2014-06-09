@@ -28,7 +28,7 @@ function getNews($start_id, $limit, $state, $user_id = false) {
 function getArticle($article_id) {
     global $conn;
     $stmt = $conn->prepare("SELECT news.id, title, synopsis, body, journalist_id, name as journalist, ncomments
-                            FROM news join users on (news.journalist_id = users.id) WHERE state = 'published' AND news.id = ?;
+                            FROM news join users on (news.journalist_id = users.id) WHERE news.id = ?;
     ");
     $stmt->execute(array($article_id));
 
@@ -108,7 +108,7 @@ function submitNews($title, $synopsis, $body, $categories) {
 function submitExistingNews($article_id) {
     global $conn;
 
-    $stmt = $conn->prepare("INSERT INTO submissions VALUES(?,DEFAULT);");
+    $stmt = $conn->prepare("INSERT INTO submissions VALUES(?, DEFAULT);");
     return $stmt->execute(array($article_id));
 }
 
@@ -137,10 +137,18 @@ function saveDraft($title, $synopsis, $body, $categories, $images) {
 function saveExistingNews($article_id, $title, $synopsis, $body, $categories) {
     global $conn;
 
-    /* TODO: what about value update? */
+    /* insert non-existent categories */
+    insertCategories($categories);
+
+    $conn->query("BEGIN;");
+    $stmt = $conn->prepare("UPDATE news SET title = ?, synopsis = ?, body = ? WHERE id = ?");
+    $stmt->execute(array($title, $synopsis, $body, $article_id));
 
     $stmt = $conn->prepare("INSERT INTO drafts VALUES(?,DEFAULT);");
-    return $stmt->execute(array($article_id));
+    $stmt->execute(array($article_id));        
+    $conn->query("COMMIT;");
+    
+    associateCategoriesNews($categories, $article_id);
 }
 
 function getAllJournalistNews($user_id) {

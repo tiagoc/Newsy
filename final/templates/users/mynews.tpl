@@ -37,7 +37,7 @@
             <tbody>                      
                 {foreach $news as $article}                                                    
                         <tr id="article-{$article.id}">
-                        <td><a href='{$BASE_URL}pages/news/view.php?article={$article.id}'>{$article.title}</a></td>
+                        <td><a href='{$BASE_URL}pages/news/view.php?id={$article.id}'>{$article.title}</a></td>
                             {if $state == "Submitted"}
                             <td>{$article.dates.submission.submitted_at}</td>                                            
                             <td><a onclick="deleteNews({$article.id});" class="tiny button radious delete-button">Delete</a></td>                                    
@@ -48,6 +48,7 @@
                             <td>{$article.dates.reject.published_at}</td>                                                                        
                         {elseif $state == "Rejected"}
                             <td>{$article.dates.reject.rejected_at}</td>
+                            <td>{$reasons[$article.id]}</td>
                             <td><a href="{$BASE_URL}pages/news/edit.php?id={$article.id}" class="tiny button radious unpublish-button">Edit</a></td>
                         {/if}                        
                     </tr>
