@@ -39,7 +39,8 @@
     </div>
 
     <!-- Sidebar -->
-    <div class="large-3 columns">        
+    <div class="large-3 columns">
+        <span data-tooltip class="has-tip" title="We use gravatar for profile pics! Check gravatar.com for more information.">How do I update my profile picture?</span>
         <a href="{$gravatar_link}"><img id="userimage" src=" {$gravatar_link} "></a>
         <a href="{$user.youtube}"><big><b><i class="fi-social-youtube small-3 small-centered columns"></i></b></big></a>
         <a href="{$user.facebook}"><big><b><i class="fi-social-facebook small-3 small-centered columns"></i></b></big></a>
@@ -79,4 +80,6 @@
     </div>
 </div>
 
-{include 'common/footer.tpl'}
+{if $user.role == 'user'}
+    {include 'common/footer.tpl'}
+{/if}

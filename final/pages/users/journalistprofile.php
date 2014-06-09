@@ -16,5 +16,6 @@ $smarty->assign("user_comments", $user_comments);
 $smarty->assign("birthday_fixed", date('d-m-Y', strtotime($user['birthday'])));
 $smarty->assign("registered_since_fixed", date('d-m-Y', strtotime($user['registered_since'])));
 
+$smarty->display("users/profile.tpl");
 $smarty->display("users/journalistprofile.tpl");
 ?>

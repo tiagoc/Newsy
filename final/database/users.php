@@ -96,3 +96,9 @@ function getAllJournalistNews($user_id) {
 
     return $stmt->fetchAll();
 }
+
+function editUser($email, $name, $role, $id) {
+    global $conn;
+    $stmt = $conn->prepare("UPDATE users SET email=?, name=?, role =? WHERE id=?;");
+    $stmt->execute(array($email, $name, $role, $id));
+}

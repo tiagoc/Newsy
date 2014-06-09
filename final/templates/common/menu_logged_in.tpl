@@ -23,7 +23,7 @@
     {/if}  
     
     {if $ROLE && ($ROLE == 'admin')}
-        <li><a href="{$BASE_URL}pages/users/manage.php"><i class="fi-checkbox"></i>User Management</a></li>
+        <li><a href="{$BASE_URL}pages/users/manage.php"><i class="fi-torsos-all"></i>User Management</a></li>
     {/if}
     
     <li><a href="{$BASE_URL}actions/users/logout.php"><i class="fi-lock"></i>Logout</a></li>
