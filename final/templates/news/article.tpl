@@ -46,6 +46,15 @@
         </article>
 
 
+        <div
+            class="fb-like"
+            data-send="true"
+            data-width="450"
+            data-show-faces="true">
+        </div>
+        
+        <p></p>
+
         <div id="comments">
 
             {foreach $comments as $comment}
@@ -63,7 +72,7 @@
             <button onclick="insertComment({$article.id}, $('#comment-content').val());" class="button round right tiny">Submit</button>
         </div>
     </div>
-        
+
     <!-- End Content -->
 
     {include 'news/sidebar.tpl'}
