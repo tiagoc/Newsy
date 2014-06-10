@@ -52,6 +52,14 @@ function getUserRole($email) {
     return $return['role'];
 }
 
+function getUserBanStatus($email) {
+    global $conn;
+    $stmt = $conn->prepare("SELECT blocked from users where email = ?;");
+    $stmt->execute(array($email));
+    $return = $stmt->fetch();
+    return $return['blocked'];
+}
+
 function doesUserExists($email) {
     global $conn;
     
@@ -64,7 +72,7 @@ function doesUserExists($email) {
 function getUsers($start_id, $limit) {
     global $conn;
     
-    $stmt = $conn->prepare("SELECT id, email, name, role FROM users WHERE id >= ? LIMIT ?;");
+    $stmt = $conn->prepare("SELECT id, email, name, role, blocked FROM users WHERE id >= ? LIMIT ?;");
     $stmt->execute(array($start_id, $limit));
     
     return $stmt->fetchAll();
@@ -101,4 +109,10 @@ function editUser($role, $id) {
     global $conn;
     $stmt = $conn->prepare("UPDATE users SET role=? WHERE id=?;");
     $stmt->execute(array($role, $id));
+}
+
+function blockUser($block, $id) {
+    global $conn;
+    $stmt = $conn->prepare("UPDATE users SET blocked=? WHERE id=?;");
+    $stmt->execute(array($block, $id));
 }

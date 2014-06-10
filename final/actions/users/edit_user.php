@@ -6,6 +6,16 @@ include_once($BASE_DIR . 'database/users.php');
 
 $role = $_POST['role'];
 $id = $_POST['id'];
+$blocked = $_POST['blocked'];
+
+try {
+    blockUser($blocked, $id);
+} catch (PDOException $e) {
+    $_SESSION['error_messages'][] = 'Error updating fields.';
+    $_SESSION['form_values'] = $_POST;
+    header("Location: " . $_SERVER['HTTP_REFERER']);
+    exit;
+}
 
 try {
     editUser($role, $id);

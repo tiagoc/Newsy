@@ -14,7 +14,7 @@ if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'editor') {
     $news = json_decode(file_get_contents($BASE_URL . "api/news/fetch.php?state=submitted&start=$start&n=$n"), true);
 
     $smarty->assign("news", $news);
-
+   
     $smarty->display("news/approvalboard.tpl");
 } else {
     $_SESSION['error_messages'][] = 'You have no permission to access this page. Maybe your session timed out?';

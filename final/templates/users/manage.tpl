@@ -46,9 +46,22 @@
                                     {/if}
                                 </select>
                             </td>
-                            <td class="text-center block"><input name='id' value={$u.id} type="checkbox"/></td>     
-                            <td class="text-center block"><a href=""><i class="fi-skull"></i></a></td>   
-                            {/foreach}
+                            <td class="text-center block"><input name='id' value={$u.id} type="checkbox"/></td>   
+                            <td class="text-center block">
+                                <select name='blocked'>
+                                    {if $u.blocked==0}
+                                        <option value="0" selected="selected">False</option>
+                                    {else}
+                                        <option value="0">False</option>
+                                    {/if}
+                                    {if $u.blocked==1}
+                                        <option value="1" selected="selected">True</option>
+                                    {else}
+                                        <option value="1">True</option>
+                                    {/if}
+                                </select>
+                            </td>  
+                        {/foreach}
 
                 </tbody>
             </table>
