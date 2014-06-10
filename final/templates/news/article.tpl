@@ -62,11 +62,6 @@
             <textarea id="comment-content" placeholder="Insert your comment here..."></textarea>
             <button onclick="insertComment({$article.id}, $('#comment-content').val());" class="button round right tiny">Submit</button>
         </div>
-
-        <div data-alert class="alert-box info">
-            You have been banned and thus cannot comment anymore!
-        </div>
-
     </div>
         
     <!-- End Content -->
