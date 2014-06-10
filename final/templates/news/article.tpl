@@ -24,7 +24,7 @@
                     <p class="text-justify">{$article.body}</p>
                 </div>
             </div>
-            
+
             <div id="category"><i class="fi-price-tag"></i> Categories</div> <p>
                 {foreach $article.categories as $c name=catlist}
                     {$c.name}
@@ -51,7 +51,7 @@
             {foreach $comments as $comment}
                 <div id="comment-{$comment.id}" class="panel radius">
                     <h5><small><div class="comment-username"><a href="../users/profile.php?id={$comment.user_id}">{$comment.name}</a></div> <div class="comment-datetime">{$comment.published_at}</div>
-                                <button type="button" onclick="deleteComment({$comment.id});" class="comment-delete">Delete</button><button type="button" class="comment-edit">Edit</button></small></h5>
+                            <button type="button" onclick="deleteComment({$comment.id});" class="comment-delete">Delete</button><button type="button" class="comment-edit">Edit</button></small></h5>
                     <p>{$comment.content}</p>
                 </div>
             {/foreach}           
@@ -63,8 +63,12 @@
             <button onclick="insertComment({$article.id}, $('#comment-content').val());" class="button round right tiny">Submit</button>
         </div>
 
-    </div>
+        <div data-alert class="alert-box info">
+            You have been banned and thus cannot comment anymore!
+        </div>
 
+    </div>
+        
     <!-- End Content -->
 
     {include 'news/sidebar.tpl'}
