@@ -35,10 +35,6 @@ if ($id) {
         $article['state'] = ucwords($article['state']);
     }
 }
-usort($news,"published_at_sort");
 
-function published_at_sort($a, $b) {
-    $a['dates']['publish']['published_at'] > $b['dates']['publish']['published_at'];
-}
 
 echo json_encode($news);

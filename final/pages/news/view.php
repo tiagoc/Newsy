@@ -10,6 +10,8 @@ if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'editor') {
     $smarty->assign("edit", 'Edit');
 }
 
+
+
 $smarty->assign("article", $article);
 $smarty->assign("comments", $comments);
 $smarty->display("news/article.tpl");
