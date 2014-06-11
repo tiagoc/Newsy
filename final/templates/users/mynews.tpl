@@ -45,7 +45,7 @@
                             <td>{$article.dates.draft.updated_at}</td>                                            
                             <td><a onclick="submitExistingNews({$article.id});" class="tiny button radious submit-button">Submit</a></td>                                    
                         {elseif $state == "Published"}
-                            <td>{$article.dates.reject.published_at}</td>                                                                        
+                            <td>{$article.dates.publish.published_at}</td>                                                                        
                         {elseif $state == "Rejected"}
                             <td>{$article.dates.reject.rejected_at}</td>
                             <td>{$reasons[$article.id]}</td>

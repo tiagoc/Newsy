@@ -2,7 +2,7 @@
 
 function getNews($start_id, $limit, $state, $user_id = false) {
     global $conn;
-
+    
     if (!$user_id) {
         $stmt = $conn->prepare("SELECT news.id, title, synopsis, body, journalist_id, name as journalist, ncomments
                             FROM news join users on (news.journalist_id = users.id)
@@ -357,6 +357,6 @@ function isFavourite($news_id, $user_id) {
 
     $stmt = $conn->prepare("SELECT news_id from favourites where news_id = ? and user_id = ?");
     $stmt->execute(array($news_id, $user_id));
-    
+
     return $stmt->fetch() ? true : false;
 }

@@ -7,7 +7,7 @@ $state = $_GET['state'] ? $_GET['state'] : 'published';
 $id = $_GET['id'];
 $query = $_GET['q'];
 $start = $_GET['start'] ? $_GET['start'] : 1;
-$n = $_GET['n'] ? $_GET['n'] : 10;
+$n = $_GET['n'] ? $_GET['n'] : 15;
 $user_id = $_GET['user_id'];
 
 $news = array();
@@ -35,4 +35,10 @@ if ($id) {
         $article['state'] = ucwords($article['state']);
     }
 }
+usort($news,"published_at_sort");
+
+function published_at_sort($a, $b) {
+    $a['dates']['publish']['published_at'] > $b['dates']['publish']['published_at'];
+}
+
 echo json_encode($news);
