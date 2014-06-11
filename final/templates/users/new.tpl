@@ -1,6 +1,6 @@
 {include file='common/header.tpl'}
 
-<form data-abide action="{$BASE_URL}/actions/users/register.php" method="post">
+<form data-abide action="{$BASE_URL}actions/users/register.php" method="post">
     <div class="row">
         <div class="small-12 columns">
             <h1>Create New User</h1>
@@ -40,7 +40,7 @@
                             <label for="gender" ><b>Gender</b> <small>required</small></label>                        
                             <select name="gender" required>
                                 <option value="male" selected> Male </option>
-                                <option value="female" selected> Female </option>
+                                <option value="female"> Female </option>
                             </select>
                             <small class="error">Gender is required.</small>
                         </div>
@@ -48,7 +48,7 @@
                     <div class="row">
                         <div class="large-4 columns">
                             <label for="birthday"><b>Birthday</b> <small>required</small></label>
-                            <input class="datepicker-simple" type="date" name="birthday" required/>
+                            <input class="datepicker-simple" type="text" name="birthday" required/>
                             <small class="error">Please enter a valid birthday in the dd/mm/yyyy format, you can use the date picker!</small>
                         </div>                    
                         <div class="large-4 columns">
@@ -58,12 +58,6 @@
                         </div>      
                         <!-- needed for alignment -->
                         <div class="large-4 columns"></div>
-                    </div>
-                    <div class="row">
-                        <div id="reg-form" class="large-8 columns">
-                            <label for="twitter"><b>Twitter profile link</b></label>
-                            <input type="url" name="twitter"/>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="large-8 columns">

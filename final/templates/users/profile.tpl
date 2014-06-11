@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="small-12 columns">
                     <h2 class="left"><i class="fi-torso"></i><div id="username">{$user.name}</div></h2>                
-                    <h2 class="right"><a href="#"><i class="fi-pencil"></i></a></h2>
+                    <h2 class="right"><a href="{$BASE_URL}pages/users/edit.php?id={$user.id}"><i class="fi-pencil"></i></a></h2>
                 </div>
             </div>
 
